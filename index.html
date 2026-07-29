@@ -1,0 +1,2243 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tej Pratap &#8212; AI/ML &#183; Computer Vision &#183; Cybersecurity</title>
+
+<meta name="description" content="Tej Pratap &#8212; AI/ML, Computer Vision, and Cybersecurity engineer. Cybersecurity Intern at ISRO's NRSC. Built AgriHealth AI, IBM Hackathon 2026 winner, and real-time anomaly detection systems.">
+
+<meta name="theme-color" content="#0A0C0E">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230A0C0E'/%3E%3Cpath d='M8 55 L28 55 L36 32 L48 72 L58 44 L66 55 L92 55' stroke='%23E3A857' stroke-width='7' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<style>
+
+:root{
+
+  --bg:#0A0C0E;--bg-r:#14171C;--bg-r2:#1B1F25;
+
+  --ink:#EDEAE2;--ink-d:#8B93A0;--ink-f:#545B66;
+
+  --sig:#E3A857;--sig-s:#F0BB74;--sig-d:rgba(227,168,87,.35);
+
+  --ln:#22262C;
+
+  --ff:'Fraunces',Georgia,serif;
+
+  --fb:'IBM Plex Sans',-apple-system,sans-serif;
+
+  --fm:'IBM Plex Mono','SF Mono',monospace;
+
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+
+body{background:radial-gradient(ellipse 1100px 550px at 50% -8%,rgba(227,168,87,.06),transparent 60%),var(--bg);color:var(--ink);font-family:var(--fb);font-weight:300;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+
+a{color:inherit;}img{max-width:100%;display:block;}
+
+::selection{background:var(--sig-d);color:var(--ink);}:focus-visible{outline:2px solid var(--sig);outline-offset:3px;}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 1.5rem;}@media(min-width:768px){.wrap{padding:0 2.5rem;}}
+
+.eyebrow{font-family:var(--fm);font-size:.72rem;letter-spacing:.12em;color:var(--sig);text-transform:uppercase;margin-bottom:1.25rem;}
+
+/* NAV */
+
+#nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,12,14,.55);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .3s,background .3s;}
+
+#nav.scrolled{border-bottom-color:var(--ln);background:rgba(10,12,14,.82);}
+
+.nav-inner{max-width:1120px;margin:0 auto;padding:0 1.5rem;height:64px;display:flex;align-items:center;justify-content:space-between;}
+
+@media(min-width:768px){.nav-inner{padding:0 2.5rem;}}
+
+.nav-logo{font-family:var(--fm);font-size:.85rem;letter-spacing:.08em;text-decoration:none;color:var(--ink);font-weight:500;}
+
+.nav-links{display:none;gap:1.2rem;align-items:center;}@media(min-width:768px){.nav-links{display:flex;}}
+
+.nav-link{font-family:var(--fm);font-size:.76rem;text-decoration:none;color:var(--ink-d);position:relative;padding:.3rem 0;transition:color .2s;}
+
+.nav-link.active,.nav-link:hover{color:var(--ink);}
+
+.nav-link.active::after{content:'';position:absolute;left:0;right:0;bottom:-2px;height:1px;background:var(--sig);}
+
+.nav-toggle{display:flex;flex-direction:column;justify-content:center;gap:5px;width:32px;height:32px;background:none;border:none;cursor:pointer;}
+
+@media(min-width:768px){.nav-toggle{display:none;}}
+
+.nav-toggle span{width:100%;height:1px;background:var(--ink);transition:transform .3s,opacity .3s;}
+
+.nav-toggle.open span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+
+.nav-toggle.open span:nth-child(2){opacity:0;}
+
+.nav-toggle.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
+
+.nav-progress{height:2px;background:var(--ln);}.nav-fill{height:100%;width:0;background:var(--sig);transition:width .1s;}
+
+.mob-menu{max-height:0;overflow:hidden;background:rgba(10,12,14,.96);border-bottom:1px solid transparent;transition:max-height .35s,border-color .35s;}
+
+.mob-menu.open{max-height:560px;border-bottom-color:var(--ln);}
+
+.mob-menu a{display:block;padding:1rem 1.5rem;font-family:var(--fm);font-size:.85rem;text-decoration:none;color:var(--ink-d);border-top:1px solid var(--ln);}
+
+.mob-menu a.active{color:var(--sig);}
+
+/* HERO */
+
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:6rem 1.5rem 4rem;}
+
+@media(min-width:768px){.hero{padding:6rem 2.5rem 4rem;}}
+
+.hero-trace{position:absolute;inset:0;width:100%;height:60%;opacity:.5;pointer-events:none;}
+
+.hero-trace path{fill:none;stroke:var(--sig);stroke-width:1.2;}
+
+.hero-content{max-width:1120px;margin:0 auto;width:100%;position:relative;}
+
+.hero-title{font-family:var(--ff);font-weight:400;font-size:clamp(2.3rem,6.4vw,4.6rem);line-height:1.08;color:var(--ink);max-width:16ch;margin-bottom:1.75rem;}
+
+.hero-sub{font-size:clamp(1rem,2vw,1.15rem);color:var(--ink-d);max-width:52ch;font-weight:300;margin-bottom:2.5rem;}
+
+.hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:1.75rem;}
+
+.btn-p{display:inline-block;padding:.9rem 1.9rem;background:var(--sig);color:var(--bg);font-family:var(--fm);font-size:.82rem;font-weight:500;text-decoration:none;border-radius:2px;transition:all .25s;}
+
+.btn-p:hover{background:var(--sig-s);transform:translateY(-2px);box-shadow:0 10px 28px rgba(227,168,87,.22);}
+
+.hero-links{display:flex;gap:1.5rem;}
+
+.hero-links a{font-family:var(--fm);font-size:.8rem;color:var(--ink-d);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px;transition:all .2s;}
+
+.hero-links a:hover{color:var(--ink);border-bottom-color:var(--sig);}
+
+.scroll-cue{position:absolute;bottom:1.5rem;left:1.5rem;font-family:var(--fm);font-size:.68rem;color:var(--ink-f);letter-spacing:.15em;text-transform:uppercase;writing-mode:vertical-rl;}
+
+@media(min-width:768px){.scroll-cue{left:2.5rem;}}
+
+/* SECTIONS */
+
+.section{padding:5.5rem 0;border-top:1px solid var(--ln);}@media(min-width:768px){.section{padding:7.5rem 0;}}
+
+.section-head{margin-bottom:3rem;}
+
+.section-title{font-family:var(--ff);font-weight:400;font-size:clamp(1.7rem,3.6vw,2.6rem);color:var(--ink);}
+
+.reveal{opacity:0;}
+
+/* ABOUT */
+
+.about-body{max-width:66ch;}.about-body p{font-size:clamp(1rem,1.6vw,1.1rem);color:var(--ink-d);margin-bottom:1.4rem;}.about-body strong{color:var(--ink);font-weight:400;}
+
+/* TIMELINE */
+
+.timeline{position:relative;}.timeline::before{content:'';position:absolute;left:5px;top:8px;bottom:8px;width:1px;background:var(--ln);}
+
+.tl-item{position:relative;padding-left:2.5rem;margin-bottom:3.5rem;}.tl-item:last-child{margin-bottom:0;}
+
+.tl-dot{position:absolute;left:0;top:6px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--sig);}
+
+.tl-date{font-family:var(--fm);font-size:.72rem;color:var(--sig);letter-spacing:.06em;margin-bottom:.6rem;}
+
+.tl-role{font-family:var(--ff);font-size:1.4rem;color:var(--ink);margin-bottom:.2rem;}
+
+.tl-org{font-size:.9rem;color:var(--ink-f);margin-bottom:1rem;}
+
+.tl-desc{color:var(--ink-d);font-size:.98rem;max-width:62ch;margin-bottom:1.1rem;}
+
+.stat-row{display:flex;flex-wrap:wrap;gap:1.75rem;margin-bottom:1.1rem;}
+
+.stat-n{font-family:var(--fm);font-size:1.2rem;color:var(--sig);display:block;}
+
+.stat-l{font-family:var(--fm);font-size:.65rem;color:var(--ink-f);text-transform:uppercase;letter-spacing:.05em;}
+
+.tags{display:flex;flex-wrap:wrap;gap:.5rem;}
+
+.tag{font-family:var(--fm);font-size:.7rem;color:var(--ink-f);border:1px solid var(--ln);padding:.3rem .7rem;border-radius:2px;}
+
+/* PROJECTS */
+
+.projects{display:flex;flex-direction:column;gap:1.5rem;}
+
+.proj-card{background:linear-gradient(180deg,var(--bg-r2),var(--bg-r));border:1px solid var(--ln);border-radius:6px;padding:2rem;}
+
+@media(min-width:768px){.proj-card{padding:2.75rem;}}
+
+.proj-card-inner{display:grid;grid-template-columns:1fr;gap:2rem;align-items:start;}
+
+@media(min-width:768px){.proj-card-inner{grid-template-columns:1fr auto;}}
+
+.proj-qr-col{display:flex;flex-direction:column;align-items:center;gap:.75rem;}
+
+.proj-qr-frame{position:relative;width:100%;max-width:320px;aspect-ratio:1/1;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:14px;box-shadow:0 0 0 1px rgba(255,255,255,0.06),0 8px 32px rgba(0,0,0,0.55),0 2px 8px rgba(0,0,0,0.4),inset 0 1px 0 rgba(255,255,255,0.08);transition:transform 0.3s ease,box-shadow 0.3s ease;cursor:default;}
+
+.proj-qr-frame:hover{transform:scale(1.03);box-shadow:0 0 0 1px rgba(255,255,255,0.1),0 12px 48px rgba(0,0,0,0.65),0 4px 16px rgba(0,0,0,0.5),inset 0 1px 0 rgba(255,255,255,0.1);}
+
+.proj-qr-frame::before{content:'';position:absolute;inset:-1px;border-radius:13px;padding:1px;background:linear-gradient(135deg,rgba(255,255,255,0.15),rgba(255,255,255,0.02),rgba(255,255,255,0.08));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;}
+
+.proj-qr-img{width:100%;height:100%;object-fit:contain;border-radius:8px;display:block;image-rendering:crisp-edges;}
+
+.proj-qr-caption{font-size:.72rem;color:rgba(255,255,255,0.4);letter-spacing:.06em;text-transform:uppercase;font-weight:500;text-align:center;}
+
+@media(max-width:767px){.proj-qr-frame{max-width:100%;aspect-ratio:1/1;}
+
+.proj-card-inner{grid-template-columns:1fr;}}
+
+.proj-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:.8rem;margin-bottom:.9rem;}
+
+.proj-head h3{font-family:var(--ff);font-size:1.7rem;font-weight:400;color:var(--ink);}
+
+.proj-tag{font-family:var(--fm);font-size:.7rem;color:var(--sig);text-transform:uppercase;}
+
+.proj-desc{color:var(--ink-d);font-size:.98rem;max-width:62ch;margin-bottom:1.5rem;}
+
+.proj-stats{display:flex;flex-wrap:wrap;gap:2rem;margin-bottom:1.5rem;}
+
+.case-btn{display:inline-flex;align-items:center;gap:.5rem;background:none;border:1px solid var(--ln);color:var(--ink-d);font-family:var(--fm);font-size:.78rem;padding:.7rem 1.2rem;border-radius:2px;cursor:pointer;transition:all .2s;margin-top:.5rem;}
+
+.case-btn:hover{border-color:var(--sig);color:var(--ink);}.case-btn .arr{transition:transform .3s;}.case-btn.open .arr{transform:rotate(180deg);}
+
+.case-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s;}
+
+.case-body.open{grid-template-rows:1fr;}.case-inner{overflow:hidden;min-height:0;}
+
+.case-grid{padding-top:2.25rem;margin-top:2.25rem;border-top:1px solid var(--ln);display:grid;gap:1.75rem;}
+
+@media(min-width:640px){.case-grid{grid-template-columns:1fr 1fr;}}
+
+.cb h4{font-family:var(--fm);font-size:.68rem;color:var(--sig);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.6rem;}
+
+.cb p{color:var(--ink-d);font-size:.92rem;}.cb.wide{grid-column:1/-1;}
+
+/* SKILLS */
+
+.skill-groups{display:grid;gap:2.25rem;grid-template-columns:1fr;}@media(min-width:640px){.skill-groups{grid-template-columns:1fr 1fr;}}
+
+.sg h4{font-family:var(--fm);font-size:.72rem;color:var(--ink-f);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.9rem;}
+
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;}
+
+.chip{font-family:var(--fm);font-size:.78rem;color:var(--ink-d);border:1px solid var(--ln);padding:.45rem .9rem;border-radius:999px;transition:all .22s;}
+
+.chip:hover{border-color:var(--sig);color:var(--sig);transform:translateY(-2px);}
+
+/* ACHIEVEMENTS */
+
+.ach-list{list-style:none;display:flex;flex-direction:column;gap:1.75rem;margin-bottom:3rem;}
+
+.ach-item{display:flex;gap:1.5rem;padding-bottom:1.75rem;border-bottom:1px solid var(--ln);}.ach-item:last-child{border-bottom:none;padding-bottom:0;}
+
+.ach-mark{font-family:var(--fm);font-size:.75rem;color:var(--sig);flex-shrink:0;padding-top:.2rem;}
+
+.ach-title{font-size:1.05rem;color:var(--ink);margin-bottom:.3rem;}.ach-desc{font-size:.9rem;color:var(--ink-d);}
+
+/* CONTACT */
+
+.contact-title{font-family:var(--ff);font-weight:400;font-size:clamp(2rem,5vw,3.2rem);margin-bottom:2rem;}
+
+.contact-links{display:flex;flex-direction:column;gap:1rem;margin-bottom:2rem;}
+
+.contact-links a{font-family:var(--fm);font-size:1.05rem;text-decoration:none;color:var(--ink);width:fit-content;border-bottom:1px solid var(--ln);padding-bottom:.3rem;transition:all .2s;}
+
+.contact-links a:hover{border-bottom-color:var(--sig);color:var(--sig);}
+
+.contact-meta{color:var(--ink-f);font-size:.88rem;}
+
+/* FOOTER */
+
+footer{padding:2.5rem 0;border-top:1px solid var(--ln);font-family:var(--fm);font-size:.75rem;color:var(--ink-f);}
+
+footer a{text-decoration:none;color:var(--ink-f);transition:color .2s;}footer a:hover{color:var(--sig);}
+
+/* LOADER */
+
+#loader{position:fixed;inset:0;z-index:300;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;transition:opacity .6s;}
+
+#loader.hide{opacity:0;pointer-events:none;}
+
+.l-pct{font-family:var(--fm);font-size:2.2rem;color:var(--sig);letter-spacing:.05em;}
+
+.l-mark{font-family:var(--fm);font-size:.7rem;color:var(--ink-f);letter-spacing:.18em;}
+
+/* CURSOR */
+
+.c-dot,.c-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:250;opacity:0;transform:translate(-50%,-50%);}
+
+.c-dot{width:6px;height:6px;border-radius:50%;background:var(--sig);}
+
+.c-ring{width:34px;height:34px;border-radius:50%;border:1px solid var(--sig-d);transition:width .2s,height .2s,border-color .2s;}
+
+.c-ring.hov{width:54px;height:54px;border-color:var(--sig);}
+
+body.hc .c-dot,body.hc .c-ring{opacity:1;}body.hc,body.hc a,body.hc button{cursor:none;}
+
+/* NOW */
+
+.now-strip{border-top:1px solid var(--ln);border-bottom:1px solid var(--ln);padding:1.1rem 0;}
+
+.now-inner{display:flex;align-items:center;gap:.85rem;}
+
+.now-dot{width:7px;height:7px;border-radius:50%;background:var(--sig);flex-shrink:0;animation:pd 2s ease-in-out infinite;}
+
+@keyframes pd{0%,100%{box-shadow:0 0 0 4px rgba(227,168,87,.15);}50%{box-shadow:0 0 0 9px rgba(227,168,87,.05);}}
+
+.now-inner p{font-family:var(--fm);font-size:.8rem;color:var(--ink-d);}.now-inner strong{color:var(--ink);font-weight:500;}
+
+/* REPO */
+
+.repo-card{background:var(--bg-r);border:1px solid var(--ln);border-radius:6px;padding:1.75rem;max-width:520px;margin-bottom:1.25rem;}
+
+.repo-head{display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem;}
+
+.repo-name{font-family:var(--fm);font-size:.92rem;color:var(--ink);text-decoration:none;border-bottom:1px solid transparent;}
+
+.repo-name:hover{border-bottom-color:var(--sig);color:var(--sig);}
+
+.repo-desc{color:var(--ink-d);font-size:.88rem;margin-bottom:1rem;}
+
+.repo-meta{display:flex;gap:1.25rem;font-family:var(--fm);font-size:.72rem;color:var(--ink-f);align-items:center;}
+
+.ldot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--sig);margin-right:.35rem;}
+
+/* WRITING EMPTY */
+
+.empty-state{border:1px dashed var(--ln);border-radius:6px;padding:2.25rem;display:flex;align-items:center;gap:1rem;max-width:640px;}
+
+.ec{font-family:var(--fm);color:var(--sig);font-size:1.2rem;animation:bl 1.1s step-end infinite;}
+
+.empty-state p{color:var(--ink-d);font-size:.92rem;}@keyframes bl{50%{opacity:0;}}
+
+/* TERMINAL */
+
+.term-trig{position:fixed;bottom:1.75rem;right:1.75rem;z-index:150;width:48px;height:48px;border-radius:50%;background:var(--bg-r2);border:1px solid var(--ln);color:var(--sig);font-family:var(--fm);font-size:.85rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .25s;}
+
+.term-trig:hover{border-color:var(--sig);transform:translateY(-2px);}
+
+.term-ov{position:fixed;inset:0;z-index:200;background:rgba(10,12,14,.7);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;}
+
+.term-ov.open{opacity:1;visibility:visible;}
+
+.term-win{width:100%;max-width:560px;background:var(--bg-r);border:1px solid var(--ln);border-radius:8px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5);}
+
+.term-bar{display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;border-bottom:1px solid var(--ln);font-family:var(--fm);font-size:.72rem;color:var(--ink-f);}
+
+.term-dots{display:flex;gap:5px;}.term-dots span{width:9px;height:9px;border-radius:50%;background:var(--ln);display:block;}.term-title{flex:1;}
+
+.term-x{background:none;border:none;color:var(--ink-f);cursor:pointer;font-size:.85rem;}.term-x:hover{color:var(--sig);}
+
+.term-body{height:240px;overflow-y:auto;padding:1rem;font-family:var(--fm);font-size:.82rem;}
+
+.tl{color:var(--ink-d);margin-bottom:.5rem;line-height:1.5;}.te{color:var(--ink);}.tc{color:var(--sig);}
+
+.term-in-row{display:flex;align-items:center;gap:.6rem;padding:.85rem 1rem;border-top:1px solid var(--ln);}
+
+.term-pr{font-family:var(--fm);color:var(--sig);font-size:.82rem;}
+
+.term-in{flex:1;background:none;border:none;outline:none;color:var(--ink);font-family:var(--fm);font-size:.82rem;}
+
+/* MILESTONES */
+
+.milestones{border-top:1px solid var(--ln);}
+
+.ms{display:flex;gap:1.5rem;padding:1rem 0;border-bottom:1px solid var(--ln);align-items:baseline;}
+
+.ms-date{font-family:var(--fm);font-size:.72rem;color:var(--sig);letter-spacing:.05em;flex-shrink:0;width:78px;}
+
+.ms-ev{font-size:.92rem;color:var(--ink-d);}
+
+/* CONTACT EXTRAS */
+
+.c-row{display:flex;align-items:baseline;gap:.85rem;flex-wrap:wrap;}
+
+.copy-btn{font-family:var(--fm);font-size:.66rem;color:var(--ink-f);background:none;border:1px solid var(--ln);border-radius:3px;padding:.25rem .6rem;cursor:pointer;transition:all .2s;}
+
+.copy-btn:hover{border-color:var(--sig);color:var(--sig);}
+
+.toast{position:fixed;bottom:2rem;left:50%;z-index:260;transform:translateX(-50%) translateY(20px);background:var(--bg-r2);border:1px solid var(--sig);color:var(--ink);font-family:var(--fm);font-size:.78rem;padding:.7rem 1.3rem;border-radius:4px;opacity:0;pointer-events:none;transition:all .3s;}
+
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+/* ===== CERTIFICATES ===== */
+
+.cert-intro{font-size:clamp(1rem,1.6vw,1.1rem);color:var(--ink-d);max-width:55ch;margin-bottom:3rem;}
+
+.cert-filters{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2.5rem;}
+
+.cert-fb{font-family:var(--fm);font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;padding:.45rem 1rem;border-radius:2px;border:1px solid var(--ln);background:none;color:var(--ink-f);cursor:pointer;transition:all .2s;}
+
+.cert-fb:hover{border-color:var(--sig);color:var(--sig);}
+
+.cert-fb.active{background:var(--sig);color:var(--bg);border-color:var(--sig);}
+
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;}
+
+.cert-card{position:relative;background:linear-gradient(145deg,#13161B 0%,#1A1E24 50%,#13161B 100%);border:1px solid var(--ln);border-radius:10px;overflow:hidden;transition:transform .35s cubic-bezier(.22,.68,0,1.2),box-shadow .35s,border-color .35s;cursor:default;}
+
+.cert-card:hover{transform:translateY(-10px) scale(1.02);box-shadow:0 28px 70px rgba(0,0,0,.6),0 0 0 1px rgba(227,168,87,.35),0 0 50px rgba(227,168,87,.05);border-color:rgba(227,168,87,.5);}
+
+.cert-card.hidden{display:none;}
+
+/* Animated shimmer ribbon */
+
+.cert-ribbon{height:4px;width:100%;background:linear-gradient(90deg,#c8922a 0%,var(--sig-s) 33%,#fff8e7 50%,var(--sig-s) 67%,#c8922a 100%);background-size:200% 100%;animation:rib 3s linear infinite;}
+
+@keyframes rib{0%{background-position:200% 0;}100%{background-position:-200% 0;}}
+
+.cert-inner{padding:1.75rem;}
+
+.cert-issuer{display:flex;align-items:center;gap:.85rem;margin-bottom:1.25rem;}
+
+.cert-logo{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.15rem;flex-shrink:0;border:1px solid var(--ln);}
+
+.cert-org{font-family:var(--fm);font-size:.7rem;color:var(--ink-f);letter-spacing:.06em;text-transform:uppercase;}
+
+.cert-via{font-family:var(--fm);font-size:.63rem;color:var(--ink-f);opacity:.55;}
+
+.cert-title{font-family:var(--ff);font-weight:400;font-size:1.15rem;color:var(--ink);margin-bottom:.65rem;line-height:1.3;}
+
+.cert-cat{display:inline-block;font-family:var(--fm);font-size:.63rem;text-transform:uppercase;letter-spacing:.08em;padding:.25rem .65rem;border-radius:999px;margin-bottom:1.2rem;}
+
+.cert-cat.cyber{background:rgba(239,68,68,.1);color:#f87171;border:1px solid rgba(239,68,68,.2);}
+
+.cert-cat.ai{background:rgba(99,102,241,.1);color:#818cf8;border:1px solid rgba(99,102,241,.2);}
+
+.cert-cat.prompt{background:rgba(16,185,129,.1);color:#34d399;border:1px solid rgba(16,185,129,.2);}
+
+.cert-cat.intern{background:rgba(227,168,87,.15);color:var(--sig);border:1px solid var(--sig-d);}
+
+.cert-foot{display:flex;align-items:center;justify-content:space-between;padding-top:1rem;margin-top:1rem;border-top:1px solid var(--ln);}
+
+.cert-link{font-family:var(--fm);font-size:.72rem;color:var(--sig);text-decoration:none;display:flex;align-items:center;gap:.4rem;opacity:.82;transition:gap .2s,opacity .2s;}
+
+.cert-link:hover{gap:.75rem;opacity:1;}
+
+.cert-arr{transition:transform .2s;}.cert-link:hover .cert-arr{transform:translateX(4px);}
+
+.cert-seal{width:32px;height:32px;border-radius:50%;border:1.5px solid var(--sig-d);display:flex;align-items:center;justify-content:center;font-size:.88rem;animation:sg 4s ease-in-out infinite;}
+
+@keyframes sg{0%,100%{box-shadow:0 0 0 0 rgba(227,168,87,0);border-color:var(--sig-d);}50%{box-shadow:0 0 16px 3px rgba(227,168,87,.2);border-color:rgba(227,168,87,.6);}}
+
+/* holographic shimmer overlay */
+
+.cert-card::after{content:'';position:absolute;inset:0;border-radius:10px;background:linear-gradient(135deg,transparent 0%,rgba(227,168,87,.04) 30%,rgba(255,255,255,.07) 50%,rgba(227,168,87,.04) 70%,transparent 100%);opacity:0;pointer-events:none;transition:opacity .35s;}
+
+.cert-card:hover::after{opacity:1;}
+
+/* featured IOCL card */
+
+.cert-card.feat{grid-column:1/-1;background:linear-gradient(145deg,#191308 0%,#1B1F25 40%,#111007 100%);border-color:rgba(227,168,87,.28);}
+
+@media(min-width:640px){
+
+  .cert-card.feat{display:flex;align-items:stretch;padding:0;}
+
+  .cert-card.feat .cert-ribbon{width:4px;height:auto;min-height:100%;background:linear-gradient(180deg,#c8922a 0%,var(--sig-s) 50%,#c8922a 100%);background-size:100% 200%;animation:ribv 3s linear infinite;flex-shrink:0;}
+
+  @keyframes ribv{0%{background-position:0 200%;}100%{background-position:0 -200%;}}
+
+  .cert-card.feat .cert-inner{flex:1;padding:2.25rem 2.5rem;}
+
+}
+
+.cert-card.feat .cert-title{font-size:1.4rem;}
+
+/* ===== GALLERY ===== */
+
+.gal-intro{font-size:clamp(1rem,1.6vw,1.1rem);color:var(--ink-d);max-width:58ch;margin-bottom:3rem;}
+
+.gal-grid{display:grid;grid-template-columns:1fr;gap:1.5rem;}
+
+@media(min-width:640px){.gal-grid{grid-template-columns:repeat(2,1fr);}.gi.wide{grid-column:1/-1;}}
+
+@media(min-width:960px){.gal-grid{grid-template-columns:repeat(3,1fr);}}
+
+.gi{position:relative;border-radius:12px;overflow:hidden;background:var(--bg-r2);transition:transform .4s cubic-bezier(.22,.68,0,1.2),box-shadow .4s;cursor:pointer;}
+
+.gi:hover{transform:translateY(-8px) scale(1.015);box-shadow:0 32px 80px rgba(0,0,0,.7),0 0 0 1.5px rgba(227,168,87,.4);}
+
+.gf{position:relative;overflow:hidden;aspect-ratio:4/3;background:#050608;}
+
+.gi.wide .gf{aspect-ratio:16/7;}
+
+/* corner frame */
+
+.gf::before,.gf::after{content:'';position:absolute;z-index:3;pointer-events:none;width:24px;height:24px;border-color:rgba(227,168,87,.6);border-style:solid;transition:width .3s,height .3s,border-color .3s;}
+
+.gf::before{top:12px;left:12px;border-width:2px 0 0 2px;}
+
+.gf::after{bottom:12px;right:12px;border-width:0 2px 2px 0;}
+
+.gc-tr,.gc-bl{position:absolute;z-index:3;pointer-events:none;width:24px;height:24px;border-color:rgba(227,168,87,.6);border-style:solid;transition:width .3s,height .3s,border-color .3s;}
+
+.gc-tr{top:12px;right:12px;border-width:2px 2px 0 0;}
+
+.gc-bl{bottom:12px;left:12px;border-width:0 0 2px 2px;}
+
+.gi:hover .gf::before,.gi:hover .gf::after,.gi:hover .gc-tr,.gi:hover .gc-bl{width:32px;height:32px;border-color:rgba(227,168,87,.95);}
+
+.g-img{width:100%;height:100%;object-fit:cover;transition:transform .5s,filter .4s;filter:brightness(.88) contrast(1.06) saturate(1.06);}
+
+.gi:hover .g-img{transform:scale(1.06);filter:brightness(1.02) contrast(1.1) saturate(1.1);}
+
+.g-vig{position:absolute;inset:0;z-index:2;pointer-events:none;background:radial-gradient(ellipse at center,transparent 48%,rgba(0,0,0,.58) 100%);}
+
+.g-badge{position:absolute;top:14px;left:50%;transform:translateX(-50%);z-index:4;font-family:var(--fm);font-size:.63rem;letter-spacing:.09em;text-transform:uppercase;background:rgba(10,12,14,.82);backdrop-filter:blur(10px);border:1px solid rgba(227,168,87,.42);color:var(--sig);padding:.3rem .9rem;border-radius:999px;white-space:nowrap;opacity:0;transition:opacity .3s;}
+
+.gi:hover .g-badge{opacity:1;}
+
+.g-cap{padding:.9rem 1.2rem;background:linear-gradient(135deg,var(--bg-r2),var(--bg-r));border-top:1px solid var(--ln);}
+
+.g-cap-t{font-family:var(--fm);font-size:.8rem;color:var(--ink);margin-bottom:.18rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+
+.g-cap-s{font-family:var(--fm);font-size:.67rem;color:var(--ink-f);}
+
+/* lightbox */
+
+#gal-modal{position:fixed;inset:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter:blur(18px);display:flex;align-items:center;justify-content:center;padding:2rem;opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s;}
+
+#gal-modal.open{opacity:1;visibility:visible;}
+
+.gm-inner{position:relative;max-width:980px;width:100%;}
+
+.gm-img{width:100%;border-radius:10px;border:1px solid rgba(227,168,87,.22);box-shadow:0 50px 120px rgba(0,0,0,.9);display:block;max-height:84vh;object-fit:contain;}
+
+.gm-close{position:absolute;top:-2.1rem;right:0;background:none;border:none;color:var(--ink-f);font-family:var(--fm);font-size:.78rem;cursor:pointer;letter-spacing:.05em;text-transform:uppercase;transition:color .2s;}
+
+.gm-close:hover{color:var(--sig);}
+
+.gm-cap{text-align:center;margin-top:1rem;font-family:var(--fm);font-size:.8rem;color:var(--ink-d);}
+
+.gm-nav{display:flex;justify-content:center;gap:1rem;margin-top:1.1rem;}
+
+.gm-btn{background:none;border:1px solid var(--ln);color:var(--ink-f);font-family:var(--fm);font-size:.78rem;padding:.5rem 1.2rem;border-radius:2px;cursor:pointer;transition:all .2s;}
+
+.gm-btn:hover{border-color:var(--sig);color:var(--sig);}
+
+/* ===== QUOTE / THOUGHTS SECTION ===== */
+
+.quote-card{position:relative;background:linear-gradient(135deg,var(--bg-r2) 0%,var(--bg-r) 100%);border:1px solid rgba(227,168,87,.28);border-radius:12px;padding:3.25rem 2.5rem;max-width:860px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.5),0 0 40px rgba(227,168,87,.04);transition:all .35s ease;}
+
+.quote-card:hover{border-color:rgba(227,168,87,.45);box-shadow:0 30px 80px rgba(0,0,0,.65),0 0 50px rgba(227,168,87,.08);}
+
+.quote-mark{position:absolute;top:-25px;right:25px;font-family:var(--ff);font-size:12rem;line-height:1;color:rgba(227,168,87,.07);pointer-events:none;user-select:none;}
+
+.quote-text{font-family:var(--ff);font-weight:400;font-size:clamp(1.2rem,2.2vw,1.7rem);line-height:1.52;margin-bottom:2rem;position:relative;z-index:2;letter-spacing:-.01em;background:linear-gradient(135deg,#EDEAE2 30%,#F0BB74 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;transition:opacity .5s ease,transform .5s ease;}
+
+.quote-text.qod-fade{opacity:0;transform:translateY(16px);}
+
+.quote-author{display:flex;align-items:center;gap:1rem;position:relative;z-index:2;flex-wrap:wrap;transition:opacity .5s ease;}
+
+.quote-line{width:40px;height:2px;background:linear-gradient(90deg,var(--sig),transparent);display:inline-block;}
+
+.quote-name{font-family:var(--fm);font-size:.9rem;font-style:normal;color:var(--sig);letter-spacing:.08em;text-transform:uppercase;font-weight:500;}
+
+/* QOD header */
+
+.qod-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem;margin-bottom:2.25rem;position:relative;z-index:2;}
+
+.qod-label{font-family:var(--fm);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--sig);display:flex;align-items:center;gap:.5rem;}
+
+.qod-date{font-family:var(--fm);font-size:.75rem;color:rgba(255,255,255,.35);letter-spacing:.06em;text-align:right;}
+
+.qod-day{display:block;font-size:.65rem;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.2);}
+
+/* Category badge */
+
+.qod-badge{display:inline-flex;align-items:center;font-family:var(--fm);font-size:.65rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:.3rem .85rem;border-radius:20px;border:1px solid;margin-left:auto;position:relative;z-index:2;}
+
+.qod-badge.Motivation{background:rgba(249,115,22,.12);color:#fb923c;border-color:rgba(249,115,22,.3);}
+
+.qod-badge.Leadership{background:rgba(59,130,246,.12);color:#60a5fa;border-color:rgba(59,130,246,.3);}
+
+.qod-badge.Success{background:rgba(234,179,8,.12);color:#facc15;border-color:rgba(234,179,8,.3);}
+
+.qod-badge.Discipline{background:rgba(239,68,68,.12);color:#f87171;border-color:rgba(239,68,68,.3);}
+
+.qod-badge.Wisdom{background:rgba(168,85,247,.12);color:#c084fc;border-color:rgba(168,85,247,.3);}
+
+.qod-badge.Mindset{background:rgba(20,184,166,.12);color:#2dd4bf;border-color:rgba(20,184,166,.3);}
+
+.qod-badge.Innovation{background:rgba(6,182,212,.12);color:#22d3ee;border-color:rgba(6,182,212,.3);}
+
+.qod-badge.Spirituality{background:rgba(139,92,246,.12);color:#a78bfa;border-color:rgba(139,92,246,.3);}
+
+/* Divider */
+
+.qod-divider{display:flex;align-items:center;gap:1rem;margin:1.75rem 0 1.5rem;position:relative;z-index:2;}
+
+.qod-divider::before,.qod-divider::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(227,168,87,.25),transparent);}
+
+.qod-divider span{color:rgba(227,168,87,.45);font-size:.7rem;}
+
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*{animation-duration:.01ms !important;transition-duration:.01ms !important;}}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="loader"><span class="l-pct" id="lPct">000</span><span class="l-mark">INITIALIZING PORTFOLIO</span></div>
+
+<div class="c-dot" id="cDot"></div>
+
+<div class="c-ring" id="cRing"></div>
+
+<div class="toast" id="toast">Copied to clipboard</div>
+
+<!-- Lightbox -->
+
+<div id="gal-modal" role="dialog" aria-modal="true" aria-label="Photo viewer">
+
+  <div class="gm-inner">
+
+    <button class="gm-close" id="gmClose">ESC / Close &#10005;</button>
+
+    <img loading="lazy" class="gm-img" id="gmImg" src="" alt="">
+
+    <p class="gm-cap" id="gmCap"></p>
+
+    <div class="gm-nav">
+
+      <button class="gm-btn" id="gmPrev">&#8592; Prev</button>
+
+      <button class="gm-btn" id="gmNext">Next &#8594;</button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<nav id="nav">
+
+  <div class="nav-inner">
+
+    <a href="#hero" class="nav-logo">TEJ PRATAP</a>
+
+    <div class="nav-links">
+
+      <a href="#about" class="nav-link">About</a>
+
+      <a href="#experience" class="nav-link">Experience</a>
+
+      <a href="#work" class="nav-link">Work</a>
+
+      <a href="#skills" class="nav-link">Skills</a>
+
+      <a href="#certificates" class="nav-link">Certs</a>
+
+      <a href="#gallery" class="nav-link">Gallery</a>
+
+      <a href="#thoughts" class="nav-link">Thoughts</a>
+
+      <a href="#contact" class="nav-link">Contact</a>
+
+    </div>
+
+    <button id="navTog" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+
+      <span></span><span></span><span></span>
+
+    </button>
+
+  </div>
+
+  <div class="nav-progress"><div class="nav-fill" id="navFill"></div></div>
+
+  <div id="mobMenu" class="mob-menu">
+
+    <a href="#about">About</a><a href="#experience">Experience</a><a href="#work">Work</a>
+
+    <a href="#skills">Skills</a><a href="#certificates">Certificates</a>
+
+    <a href="#gallery">Gallery</a><a href="#thoughts">Thoughts</a><a href="#contact">Contact</a>
+
+  </div>
+
+</nav>
+
+<main>
+
+<section id="hero" class="hero">
+
+  <svg class="hero-trace" viewBox="0 0 1200 200" preserveAspectRatio="none" aria-hidden="true">
+
+    <path id="tracePath" d="M0,100 L40,98 L80,103 L120,97 L160,101 L200,99 L240,104 L280,96 L320,100 L360,102 L400,98 L440,100 L480,97 L520,103 L560,99 L600,101 L640,100 L660,95 L680,60 L700,15 L715,70 L730,110 L745,90 L760,100 L800,99 L840,101 L880,98 L920,100 L960,102 L1000,99 L1040,101 L1080,98 L1120,100 L1160,99 L1200,100"/>
+
+  </svg>
+
+  <div class="hero-content">
+
+    <p class="eyebrow">AI/ML &middot; Computer Vision &middot; Cybersecurity</p>
+
+    <h1 class="hero-title">I build systems that catch what shouldn&#39;t be missed.</h1>
+
+    <p class="hero-sub">From anomaly detection on live refinery sensor feeds to a crop-disease model used by 10,000+ farmers, I work at the intersection of AI/ML, computer vision, and cybersecurity.</p>
+
+    <div class="hero-cta">
+
+      <a href="#work" class="btn-p">View Work</a>
+
+      <div class="hero-links">
+
+        <a href="https://github.com/rahulpatel0407" target="_blank" rel="noopener">GitHub</a>
+
+        <a href="https://linkedin.com/in/tej-pratap-203418395" target="_blank" rel="noopener">LinkedIn</a>
+
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=tej.pratap.career@gmail.com" target="_blank" rel="noopener">Email</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <span class="scroll-cue">Scroll</span>
+
+</section>
+
+<section class="now-strip">
+
+  <div class="wrap now-inner">
+
+    <span class="now-dot"></span>
+
+    <p><strong>Right now &mdash;</strong> building threat-detection analytics at ISRO/NRSC. Open to research internships in IoT, ML, and Computer Vision.</p>
+
+  </div>
+
+</section>
+
+<section id="about" class="section">
+
+  <div class="wrap">
+
+    <div class="section-head reveal"><p class="eyebrow">01 &mdash; About</p><h2 class="section-title">Why this work.</h2></div>
+
+    <div class="about-body reveal">
+
+      <p>I got into this because I like systems that have to actually work &mdash; not demo well, <strong>work</strong>. My first real taste of that was at IOCL, watching refinery engineers make calls off sensor dashboards I helped build. If the anomaly detection missed something, that wasn&#39;t an abstract metric &mdash; it was an operational risk on a live refinery floor.</p>
+
+      <p>Cybersecurity followed naturally. It&#39;s the same instinct pointed at a different kind of signal: instead of catching a faulty sensor, you&#39;re catching an intrusion before it becomes an incident. At NRSC, I&#39;m doing exactly that &mdash; building analytics for anomalous activity in a live enterprise environment.</p>
+
+      <p>AI is the tool that makes both possible at scale. AgriHealth AI came from the same idea, applied somewhere it mattered more personally: smallholder farmers who lose a season to a disease they couldn&#39;t catch in time.</p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="experience" class="section">
+
+  <div class="wrap">
+
+    <div class="section-head reveal"><p class="eyebrow">02 &mdash; Experience</p><h2 class="section-title">Where it&#39;s been tested.</h2></div>
+
+    <div class="timeline reveal">
+
+      <article class="tl-item">
+
+        <div class="tl-dot"></div>
+
+        <p class="tl-date">JUL 2026 &mdash; PRESENT</p>
+
+        <h3 class="tl-role">Cybersecurity Intern</h3>
+
+        <p class="tl-org" style="display:flex;align-items:center;gap:.6rem;"><img src="logo-isro.png" alt="ISRO Logo" style="height:26px;object-fit:contain;background:#fff;border-radius:4px;padding:2px 6px;"> NRSC (ISRO), Hyderabad</p>
+
+        <p class="tl-desc">Contributing to an AI/ML-driven cybersecurity analytics solution for detecting anomalous web activity in a secure enterprise environment.</p>
+
+        <div class="tags"><span class="tag">Anomaly Detection</span><span class="tag">Security Monitoring</span><span class="tag">Incident Response</span></div>
+
+      </article>
+
+      <article class="tl-item">
+
+        <div class="tl-dot"></div>
+
+        <p class="tl-date">JAN 2026 &mdash; MAR 2026</p>
+
+        <h3 class="tl-role">Software Engineer Intern</h3>
+
+        <p class="tl-org" style="display:flex;align-items:center;gap:.6rem;"><img src="logo-iocl.png" alt="IndianOil Logo" style="height:22px;object-fit:contain;background:#fff;border-radius:4px;padding:2px;"> Indian Oil Corporation Limited &mdash; Guwahati Refinery</p>
+
+        <p class="tl-desc">Built the anomaly-detection layer between raw sensor data and the engineers acting on it &mdash; benchmarking rule-based thresholds against ML approaches on live sensor streams.</p>
+
+        <div class="stat-row">
+
+          <div><span class="stat-n">&#8593;30%</span><span class="stat-l">Detection Accuracy</span></div>
+
+          <div><span class="stat-n">&#8595;40%</span><span class="stat-l">Monitoring Overhead</span></div>
+
+          <div><span class="stat-n">0</span><span class="stat-l">Data Loss</span></div>
+
+        </div>
+
+        <div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">SQL</span><span class="tag">ETL</span><span class="tag">Isolation Forest</span></div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="work" class="section">
+
+  <div class="wrap">
+
+    <div class="section-head reveal"><p class="eyebrow">03 &mdash; Selected Work</p><h2 class="section-title">Two systems, two kinds of stakes.</h2></div>
+
+    <div class="projects reveal">
+
+      <article class="proj-card">
+
+        <div class="proj-card-inner">
+
+          <!-- Left: Text Content -->
+
+          <div class="proj-text-col">
+
+            <div class="proj-head"><h3>AgriHealth AI</h3><span class="proj-tag" style="display:inline-flex;align-items:center;gap:.4rem;"><img src="logo-ibm.svg" alt="IBM Logo" style="height:14px;object-fit:contain;background:#fff;border-radius:2px;padding:1px 4px;"> IBM Hackathon 2026 Winner</span></div>
+
+            <p class="proj-desc">A CNN-based crop-disease detector built for farmers with patchy connectivity &mdash; fine-tuned on domain-specific imagery, benchmarked for edge deployment, and pitched directly to Bihar&#39;s Principal Secretary (Agriculture).</p>
+
+            <div class="proj-stats">
+
+              <div><span class="stat-n">10,000+</span><span class="stat-l">Potential Users</span></div>
+
+              <div><span class="stat-n">&#8595;35%</span><span class="stat-l">Misclassification</span></div>
+
+              <div><span class="stat-n">&lt;3s</span><span class="stat-l">Response Time</span></div>
+
+            </div>
+
+            <div class="tags" style="margin-bottom:1.5rem;"><span class="tag">TensorFlow / PyTorch</span><span class="tag">CNN Fine-tuning</span><span class="tag">IoT Edge Inference</span></div>
+
+            <button class="case-btn" data-target="c-agri"><span class="bt">View case study</span><span class="arr">&#8595;</span></button>
+
+          </div>
+
+          <!-- Right: QR Code Frame -->
+
+          <div class="proj-qr-col">
+
+            <div class="proj-qr-frame" title="Scan to explore AgriHealth AI">
+
+              <img class="proj-qr-img" src="agrihealth-qr.jpeg" alt="AgriHealth AI QR Code &#8212; Scan to explore the project" loading="lazy">
+
+            </div>
+
+            <span class="proj-qr-caption">Scan to explore AgriHealth AI</span>
+
+          </div>
+
+        </div>
+
+        <!-- Case Study (full width below) -->
+
+        <div class="case-body" id="c-agri"><div class="case-inner"><div class="case-grid">
+
+          <div class="cb"><h4>The Problem</h4><p>Smallholder farmers often lose a season to a crop disease they catch too late. No affordable real-time diagnosis without reliable internet.</p></div>
+
+          <div class="cb"><h4>Approach</h4><p>Fine-tuned CNN on domain-specific agricultural imagery. ~35% reduction in misclassification via systematic ablation studies.</p></div>
+
+          <div class="cb"><h4>Architecture</h4><p>Compared edge vs. cloud inference across 4 IoT hardware configs. Optimized for sub-3s end-to-end response without cloud round-trip.</p></div>
+
+          <div class="cb"><h4>Challenges</h4><p>Accuracy vs. latency vs. hardware cost. Every experiment was a response to that tension, not an optional extra.</p></div>
+
+          <div class="cb wide"><h4>Recognition</h4><p>IBM Hackathon 2026 Winner. Presented at AI Summit Bihar 2026. Formal appreciation from Bihar&#39;s Education Minister and the Public Health Engineering Department Minister.</p></div>
+
+        </div></div></div>
+
+      </article>
+
+      <article class="proj-card">
+
+        <div class="proj-head"><h3>PPE Detection Kit</h3><span class="proj-tag">Real-time Safety Compliance</span></div>
+
+        <p class="proj-desc">A YOLOv8 computer-vision pipeline that flags missing safety gear on an industrial floor in under 200ms a frame.</p>
+
+        <div class="proj-stats">
+
+          <div><span class="stat-n">&lt;200ms</span><span class="stat-l">Detection Latency</span></div>
+
+          <div><span class="stat-n">91%+</span><span class="stat-l">Precision</span></div>
+
+          <div><span class="stat-n">3</span><span class="stat-l">Baselines Benchmarked</span></div>
+
+        </div>
+
+        <div class="tags" style="margin-bottom:1.5rem;"><span class="tag">PyTorch</span><span class="tag">OpenCV</span><span class="tag">YOLOv8</span></div>
+
+        <button class="case-btn" data-target="c-ppe"><span class="bt">View case study</span><span class="arr">&#8595;</span></button>
+
+        <a href="https://github.com/rahulpatel0407/AI-Based-Real-Time-PPE-Compliance-Monitoring-Attendance-System" target="_blank" rel="noopener" class="cert-link" style="margin-top:1rem;display:inline-flex;margin-left:1rem;">View Repository <span class="cert-arr">&#8594;</span></a>
+
+        <div class="case-body" id="c-ppe"><div class="case-inner"><div class="case-grid">
+
+          <div class="cb"><h4>The Problem</h4><p>Manual PPE compliance checks on an industrial floor don&#39;t scale and don&#39;t catch violations in real time.</p></div>
+
+          <div class="cb"><h4>Approach</h4><p>YOLOv8, benchmarked against 3 baseline detection architectures to validate the choice before committing.</p></div>
+
+          <div class="cb wide"><h4>Challenges</h4><p>Holding sub-200ms latency while keeping precision above 91% meant tuning confidence thresholds, NMS parameters, and input resolution together, not independently.</p></div>
+
+        </div></div></div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="opensource" class="section">
+
+  <div class="wrap">
+
+    <div class="section-head reveal"><p class="eyebrow">04 &mdash; Open Source</p><h2 class="section-title">What&#39;s public.</h2></div>
+
+    <div class="repo-card reveal">
+
+      <div class="repo-head"><span style="color:var(--ink-f)">&#9741;</span><a href="https://github.com/rahulpatel0407/AI-Based-Real-Time-PPE-Compliance-Monitoring-Attendance-System" target="_blank" rel="noopener" class="repo-name">rahulpatel0407 / AI-Based-Real-Time-PPE-Compliance-Monitoring-Attendance-System</a></div>
+
+      <p class="repo-desc">AI-based real-time PPE safety-compliance monitoring &amp; attendance system &mdash; YOLOv8, PyTorch, OpenCV. &lt;200ms detection latency, 91%+ precision.</p>
+
+      <div class="repo-meta"><span><span class="ldot"></span>Python</span><span>Public</span></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="skills" class="section">
+
+  <div class="wrap">
+
+    <div class="section-head reveal"><p class="eyebrow">05 &mdash; Skills</p><h2 class="section-title">The toolkit.</h2></div>
+
+    <div class="skill-groups reveal">
+
+      <div class="sg"><h4>Languages</h4><div class="chips"><span class="chip">Python</span><span class="chip">C</span><span class="chip">SQL</span><span class="chip">Bash</span></div></div>
+
+      <div class="sg"><h4>AI / ML</h4><div class="chips"><span class="chip">TensorFlow</span><span class="chip">PyTorch</span><span class="chip">OpenCV</span><span class="chip">CNNs</span><span class="chip">Deep Learning</span><span class="chip">Computer Vision</span></div></div>
+
+      <div class="sg"><h4>Data &amp; Analytics</h4><div class="chips"><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">ETL Pipelines</span><span class="chip">Time-Series Analysis</span></div></div>
+
+      <div class="sg"><h4>Cybersecurity</h4><div class="chips"><span class="chip">Anomaly Detection</span><span class="chip">Security Monitoring</span><span class="chip">Incident Response</span><span class="chip">Ethical Hacking</span></div></div>
+
+      <div class="sg"><h4>Research Methods</h4><div class="chips"><span class="chip">Literature Survey</span><span class="chip">Benchmark Studies</span><span class="chip">Ablation Testing</span><span class="chip">Technical Reporting</span></div></div>
+
+      <div class="sg"><h4>Tools &amp; Platforms</h4><div class="chips"><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">Jupyter</span><span class="chip">Linux</span><span class="chip">Windows</span></div></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="achievements" class="section">
+
+  <div class="wrap">
+
+    <div class="section-head reveal"><p class="eyebrow">06 &mdash; Achievements</p><h2 class="section-title">Outside the day job.</h2></div>
+
+    <ul class="ach-list reveal">
+
+      <li class="ach-item"><span class="ach-mark">01</span><div><p class="ach-title">IBM Hackathon 2026 &mdash; Winner</p><p class="ach-desc">Built AgriHealth AI in a competitive national-level environment.</p></div></li>
+
+      <li class="ach-item"><span class="ach-mark">02</span><div><p class="ach-title">AI Summit Bihar 2026 &mdash; Presenter</p><p class="ach-desc">Demonstrated AgriHealth AI to industry leaders, innovators, and government policymakers.</p></div></li>
+
+      <li class="ach-item"><span class="ach-mark">03</span><div><p class="ach-title">Government Recognition</p><p class="ach-desc">Formal appreciation from Bihar&#39;s Education Minister and the Public Health Engineering Department Minister.</p></div></li>
+
+      <li class="ach-item"><span class="ach-mark">04</span><div><p class="ach-title">NCC &#39;B&#39; Certificate &mdash; Gold Medalist</p><p class="ach-desc">Two-year structured national program in leadership and team coordination.</p></div></li>
+
+    </ul>
+
+  </div>
+
+</section>
+
+<!-- ============ CERTIFICATES ============ -->
+
+<section id="certificates" class="section">
+
+  <div class="wrap">
+
+    <div class="section-head reveal"><p class="eyebrow">07 &mdash; Certifications</p><h2 class="section-title">Verified credentials.</h2></div>
+
+    <p class="cert-intro reveal">Professional certifications across cybersecurity, AI &amp; ML, and prompt engineering &mdash; all verified and live. Click any card to verify on Coursera.</p>
+
+    <div class="cert-filters reveal">
+
+      <button class="cert-fb active" data-filter="all">All (10)</button>
+
+      <button class="cert-fb" data-filter="cyber">Cybersecurity</button>
+
+      <button class="cert-fb" data-filter="ai">AI &amp; ML</button>
+
+      <button class="cert-fb" data-filter="prompt">Prompt Engineering</button>
+
+      <button class="cert-fb" data-filter="intern">Internship</button>
+
+    </div>
+
+    <div class="cert-grid" id="certGrid">
+
+      <!-- IOCL featured -->
+
+      <div class="cert-card feat reveal" data-cat="intern">
+
+        <div class="cert-ribbon"></div>
+
+        <div class="cert-inner">
+
+          <div class="cert-issuer">
+
+            <div class="cert-logo" style="background:#ffffff;padding:4px;overflow:hidden;"><img src="logo-iocl.png" alt="IndianOil Logo" style="width:100%;height:100%;object-fit:contain;"></div>
+
+            <div><p class="cert-org">Indian Oil Corporation Limited</p><p class="cert-via">IOCL &middot; Guwahati Refinery &middot; Jan&ndash;Mar 2026</p></div>
+
+          </div>
+
+          <h3 class="cert-title">Software Engineer Internship Certificate</h3>
+
+          <span class="cert-cat intern">Industry Internship</span>
+
+          <p style="font-size:.9rem;color:var(--ink-d);margin-bottom:1.25rem;max-width:60ch;">Built anomaly-detection pipelines on live refinery sensor streams &mdash; improving detection accuracy by 30% and cutting monitoring overhead by 40% with zero data loss.</p>
+
+          <div class="cert-foot">
+
+            <a href="https://drive.google.com/file/d/1IxPQLkIrYNoz1LOCIFgvf70Z0vRugphq/view?usp=sharing" target="_blank" rel="noopener" class="cert-link">View Certificate <span class="cert-arr">&#8594;</span></a>
+
+            <div class="cert-seal">&#127885;</div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Google Cybersecurity -->
+
+      <div class="cert-card reveal" data-cat="cyber">
+
+        <div class="cert-ribbon"></div>
+
+        <div class="cert-inner">
+
+          <div class="cert-issuer">
+
+            <div class="cert-logo" style="background:#ffffff;padding:5px;overflow:hidden;border-color:rgba(66,133,244,.3);"><img src="logo-google.svg" alt="Google Logo" style="width:100%;height:100%;object-fit:contain;"></div>
+
+            <div><p class="cert-org">Google</p><p class="cert-via">via Coursera</p></div>
+
+          </div>
+
+          <h3 class="cert-title">Google Cybersecurity Professional Certificate</h3>
+
+          <span class="cert-cat cyber">Cybersecurity</span>
+
+          <div class="cert-foot">
+
+            <a href="https://coursera.org/share/d85555c04a5349fe82a45f94007bdd3f" target="_blank" rel="noopener" class="cert-link">Verify Certificate <span class="cert-arr">&#8594;</span></a>
+
+            <div class="cert-seal">&#10003;</div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- IBM Ethical Hacking -->
+
+      <div class="cert-card reveal" data-cat="cyber">
+
+        <div class="cert-ribbon"></div>
+
+        <div class="cert-inner">
+
+          <div class="cert-issuer">
+
+            <div class="cert-logo" style="background:#ffffff;padding:5px;overflow:hidden;border-color:rgba(5,74,218,.3);"><img src="logo-ibm.svg" alt="IBM Logo" style="width:100%;height:100%;object-fit:contain;"></div>
+
+            <div><p class="cert-org">IBM</p><p class="cert-via">via Coursera</p></div>
+
+          </div>
+
+          <h3 class="cert-title">Ethical Hacking with Open Source Tools</h3>
+
+          <span class="cert-cat cyber">Cybersecurity</span>
+
+          <div class="cert-foot">
+
+            <a href="https://coursera.org/share/d85ca09b9cf44c0ca0ce62919c63468d" target="_blank" rel="noopener" class="cert-link">Verify Certificate <span class="cert-arr">&#8594;</span></a>
+
+            <div class="cert-seal">&#10003;</div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Strategic Cybersecurity -->
+
+      <div class="cert-card reveal" data-cat="cyber">
+
+        <div class="cert-ribbon"></div>
+
+        <div class="cert-inner">
+
+          <div class="cert-issuer">
+
+            <div class="cert-logo" style="background:#ffffff;padding:5px;overflow:hidden;border-color:rgba(0,86,210,.3);"><img src="logo-coursera.svg" alt="Coursera Logo" style="width:100%;height:100%;object-fit:contain;"></div>
+
+            <div><p class="cert-org">Coursera</p><p class="cert-via">via Coursera</p></div>
+
+          </div>
+
+          <h3 class="cert-title">A Strategic Approach to Cybersecurity</h3>
+
+          <span class="cert-cat cyber">Cybersecurity</span>
+
+          <div class="cert-foot">
+
+            <a href="https://coursera.org/share/6f84f46fc56382aec7aea77bbd8b5c1a" target="_blank" rel="noopener" class="cert-link">Verify Certificate <span class="cert-arr">&#8594;</span></a>
+
+            <div class="cert-seal">&#10003;</div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- AI Foundations -->
+
+      <div class="cert-card reveal" data-cat="ai">
+
+        <div class="cert-ribbon"></div>
+
+        <div class="cert-inner">
+
+          <div class="cert-issuer">
+
+            <div class="cert-logo" style="background:#ffffff;padding:5px;overflow:hidden;border-color:rgba(5,74,218,.3);"><img src="logo-ibm.svg" alt="IBM Logo" style="width:100%;height:100%;object-fit:contain;"></div>
+
+            <div><p class="cert-org">IBM</p><p class="cert-via">via Coursera</p></div>
+
+          </div>
+
+          <h3 class="cert-title">AI Foundations for Everyone</h3>
+
+          <span class="cert-cat ai">AI &amp; ML</span>
+
+          <div class="cert-foot">
+
+            <a href="https://coursera.org/share/9da19abf025e14ed84323bee9e551af3" target="_blank" rel="noopener" class="cert-link">Verify Certificate <span class="cert-arr">&#8594;</span></a>
+
+            <div class="cert-seal">&#10003;</div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Building AI Powered Chatbots Without Programming -->
+
+      <div class="cert-card reveal" data-cat="ai">
+
+        <div class="cert-ribbon"></div>
+
+        <div class="cert-inner">
+
+          <div class="cert-issuer">
+
+            <div class="cert-logo" style="background:#ffffff;padding:5px;overflow:hidden;border-color:rgba(5,74,218,.3);"><img src="logo-ibm.svg" alt="IBM Logo" style="width:100%;height:100%;object-fit:contain;"></div>
+
+            <div><p class="cert-org">IBM</p><p class="cert-via">via Coursera</p></div>
+
+          </div>
+
+          <h3 class="cert-title">Building AI Powered Chatbots Without Programming</h3>
+
+          <span class="cert-cat ai">AI &amp; ML</span>
+
+          <div class="cert-foot">
+
+            <a href="https://coursera.org/share/2adb2ec43d6c086e18813e946f708eca" target="_blank" rel="noopener" class="cert-link">Verify Certificate <span class="cert-arr">&#8594;</span></a>
+
+            <div class="cert-seal">&#10003;</div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Trustworthy GenAI -->
+
+      <div class="cert-card reveal" data-cat="ai">
+
+        <div class="cert-ribbon"></div>
+
+        <div class="cert-inner">
+
+          <div class="cert-issuer">
+
+            <div class="cert-logo" style="background:#ffffff;padding:5px;overflow:hidden;border-color:rgba(0,86,210,.3);"><img src="logo-coursera.svg" alt="Coursera Logo" style="width:100%;height:100%;object-fit:contain;"></div>
+
+            <div><p class="cert-org">Coursera</p><p class="cert-via">via Coursera</p></div>
+
+          </div>
+
+          <h3 class="cert-title">Trustworthy Generative AI</h3>
+
+          <span class="cert-cat ai">AI &amp; ML</span>
+
+          <div class="cert-foot">
+
+            <a href="https://coursera.org/share/54e8ec9ced8ca52628c27d8683d338a7" target="_blank" rel="noopener" class="cert-link">Verify Certificate <span class="cert-arr">&#8594;</span></a>
+
+            <div class="cert-seal">&#10003;</div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Prompt Engineering -->
+
+      <div class="cert-card reveal" data-cat="prompt">
+
+        <div class="cert-ribbon"></div>
+
+        <div class="cert-inner">
+
+          <div class="cert-issuer">
+
+            <div class="cert-logo" style="background:#ffffff;padding:5px;overflow:hidden;border-color:rgba(0,86,210,.3);"><img src="logo-coursera.svg" alt="Coursera Logo" style="width:100%;height:100%;object-fit:contain;"></div>
+
+            <div><p class="cert-org">Coursera</p><p class="cert-via">via Coursera</p></div>
+
+          </div>
+
+          <h3 class="cert-title">Prompt Engineering</h3>
+
+          <span class="cert-cat prompt">Prompt Engineering</span>
+
+          <div class="cert-foot">
+
+            <a href="https://coursera.org/share/b40fb682ada17b50b08c54b2eb412b58" target="_blank" rel="noopener" class="cert-link">Verify Certificate <span class="cert-arr">&#8594;</span></a>
+
+            <div class="cert-seal">&#10003;</div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Prompt Engineering for ChatGPT -->
+
+      <div class="cert-card reveal" data-cat="prompt">
+
+        <div class="cert-ribbon"></div>
+
+        <div class="cert-inner">
+
+          <div class="cert-issuer">
+
+            <div class="cert-logo" style="background:#ffffff;padding:5px;overflow:hidden;border-color:rgba(207,169,53,.3);"><img src="logo-vanderbilt.svg" alt="Vanderbilt Logo" style="width:100%;height:100%;object-fit:contain;"></div>
+
+            <div><p class="cert-org">Vanderbilt University</p><p class="cert-via">via Coursera</p></div>
+
+          </div>
+
+          <h3 class="cert-title">Prompt Engineering for ChatGPT</h3>
+
+          <span class="cert-cat prompt">Prompt Engineering</span>
+
+          <div class="cert-foot">
+
+            <a href="https://coursera.org/share/2693ab8ec778231b6d75caaa1aa31895" target="_blank" rel="noopener" class="cert-link">Verify Certificate <span class="cert-arr">&#8594;</span></a>
+
+            <div class="cert-seal">&#10003;</div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ChatGPT Advanced Data Analysis -->
+
+      <div class="cert-card reveal" data-cat="prompt">
+
+        <div class="cert-ribbon"></div>
+
+        <div class="cert-inner">
+
+          <div class="cert-issuer">
+
+            <div class="cert-logo" style="background:#ffffff;padding:5px;overflow:hidden;border-color:rgba(207,169,53,.3);"><img src="logo-vanderbilt.svg" alt="Vanderbilt Logo" style="width:100%;height:100%;object-fit:contain;"></div>
+
+            <div><p class="cert-org">Vanderbilt University</p><p class="cert-via">via Coursera</p></div>
+
+          </div>
+
+          <h3 class="cert-title">ChatGPT Advanced Data Analysis</h3>
+
+          <span class="cert-cat prompt">Prompt Engineering</span>
+
+          <div class="cert-foot">
+
+            <a href="https://coursera.org/share/b6b18e1859d2286f369cddec25282789" target="_blank" rel="noopener" class="cert-link">Verify Certificate <span class="cert-arr">&#8594;</span></a>
+
+            <div class="cert-seal">&#10003;</div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ============ GALLERY ============ -->
+
+<section id="gallery" class="section">
+
+  <div class="wrap">
+
+    <div class="section-head reveal"><p class="eyebrow">08 &mdash; In the Field</p><h2 class="section-title">Bihar AI Summit 2026.</h2></div>
+
+    <p class="gal-intro reveal">Presenting AgriHealth AI at Bihar AI Summit 2026 in Patna &mdash; from a university lab to a live stage in front of government ministers, industry leaders, and the national press. Formally appreciated by the Education Minister &amp; PHED Minister of Bihar. Click any photo to enlarge &mdash; use arrow keys to navigate.</p>
+
+    <div class="gal-grid" id="galGrid">
+
+      <!-- Photo 1: With Bihar Education Minister &#8212; WIDE HERO -->
+
+      <div class="gi wide reveal" data-gi="0" data-cap="With Hon'ble Education Minister of Bihar, Shri Mithlesh Tiwari Ji &mdash; Bihar AI Summit 2026">
+
+        <div class="gf" style="aspect-ratio:16/9;background:#080a0d;">
+
+          <div class="gc-tr"></div><div class="gc-bl"></div>
+
+          <div class="g-vig"></div>
+
+          <div class="g-badge">&#127942; Education Minister Appreciation</div>
+
+          <img loading="lazy" class="g-img" src="photo1.jpeg" alt="With Honorable Education Minister of Bihar Shri Mithlesh Tiwari Ji at Bihar AI Summit 2026" id="gphoto0" style="object-fit:contain;background:#080a0d;">
+
+        </div>
+
+        <div class="g-cap">
+
+          <p class="g-cap-t">With Hon&#39;ble Education Minister &mdash; Shri Mithlesh Tiwari Ji</p>
+
+          <p class="g-cap-s">Bihar AI Summit 2026 &middot; Patna Energy Bhavan &middot; May 23&ndash;24</p>
+
+        </div>
+
+      </div>
+
+      <!-- Photo 2: IBM Hackathon Winner Award -->
+
+      <div class="gi reveal" data-gi="1" data-cap="IBM Hackathon 2026 Winner &mdash; AgriHealth AI Award Ceremony">
+
+        <div class="gf">
+
+          <div class="gc-tr"></div><div class="gc-bl"></div>
+
+          <div class="g-vig"></div>
+
+          <div class="g-badge">&#127942; IBM Hackathon 2026 &mdash; Winner</div>
+
+          <img loading="lazy" class="g-img" src="photo2.jpeg" alt="IBM Hackathon 2026 Winner Award for AgriHealth AI" id="gphoto1">
+
+        </div>
+
+        <div class="g-cap">
+
+          <p class="g-cap-t">IBM Hackathon 2026 &mdash; Winner Award</p>
+
+          <p class="g-cap-s">AgriHealth AI &middot; National Hackathon &middot; 2026</p>
+
+        </div>
+
+      </div>
+
+      <!-- Photo 3: Newspaper clipping -->
+
+      <div class="gi reveal" data-gi="2" data-cap="National Press Coverage &mdash; GNSU students present AgriHealth AI at Bihar AI Summit 2026">
+
+        <div class="gf">
+
+          <div class="gc-tr"></div><div class="gc-bl"></div>
+
+          <div class="g-vig"></div>
+
+          <div class="g-badge">&#128240; National Press &mdash; AgriHealth AI Feature</div>
+
+          <img loading="lazy" class="g-img" src="photo3.jpeg" alt="National newspaper coverage of AgriHealth AI project at Bihar AI Summit 2026" id="gphoto2" style="object-fit:contain;background:#ffffff;">
+
+        </div>
+
+        <div class="g-cap">
+
+          <p class="g-cap-t">National Press Coverage &mdash; AgriHealth AI</p>
+
+          <p class="g-cap-s">Patna newspaper &middot; Bihar AI Summit 2026 feature article</p>
+
+        </div>
+
+      </div>
+
+      <!-- Photo 4: Team group photo -->
+
+      <div class="gi reveal" data-gi="3" data-cap="GNSU Team at Bihar AI Summit 2026 &mdash; Gopal Narayan Singh University, Jamuhar">
+
+        <div class="gf">
+
+          <div class="gc-tr"></div><div class="gc-bl"></div>
+
+          <div class="g-vig"></div>
+
+          <div class="g-badge">&#127979; GNSU Team &mdash; Bihar AI Summit 2026</div>
+
+          <img loading="lazy" class="g-img" src="photo4.jpeg" alt="GNSU team group photo at Bihar AI Summit 2026" id="gphoto3">
+
+        </div>
+
+        <div class="g-cap">
+
+          <p class="g-cap-t">GNSU Team &mdash; Bihar AI Summit Group Photo</p>
+
+          <p class="g-cap-s">Gopal Narayan Singh University &middot; Jamuhar, Rohtas, Bihar</p>
+
+        </div>
+
+      </div>
+
+      <!-- Photo 5: With PHED Minister -->
+
+      <div class="gi reveal" data-gi="4" data-cap="With Hon'ble PHED Minister of Bihar, Shri Sanjay Singh Ji &mdash; Bihar AI Summit 2026">
+
+        <div class="gf">
+
+          <div class="gc-tr"></div><div class="gc-bl"></div>
+
+          <div class="g-vig"></div>
+
+          <div class="g-badge">&#127885; PHED Minister &mdash; Govt Appreciation</div>
+
+          <img loading="lazy" class="g-img" src="photo5.jpeg" alt="With Honorable PHED Minister of Bihar Shri Sanjay Singh Ji at Bihar AI Summit 2026" id="gphoto4">
+
+        </div>
+
+        <div class="g-cap">
+
+          <p class="g-cap-t">With Hon&#39;ble PHED Minister &mdash; Shri Sanjay Singh Ji</p>
+
+          <p class="g-cap-s">Bihar AI Summit 2026 &middot; Government appreciation &middot; Patna</p>
+
+        </div>
+
+      </div>
+
+      <!-- Photo 6: IOCL Internship -->
+
+      <div class="gi reveal" data-gi="5" data-cap="Software Engineering Internship &mdash; Indian Oil Corporation Limited (IOCL Guwahati Refinery)">
+
+        <div class="gf" style="background:#080a0d;">
+
+          <div class="gc-tr"></div><div class="gc-bl"></div>
+
+          <div class="g-vig"></div>
+
+          <div class="g-badge">&#127981; IOCL Refinery &mdash; Internship</div>
+
+          <img loading="lazy" class="g-img" src="photo6.jpeg" alt="Intern at Indian Oil Corporation Limited" id="gphoto5" style="object-fit:contain;background:#080a0d;">
+
+        </div>
+
+        <div class="g-cap">
+
+          <p class="g-cap-t">Internship at Indian Oil Corporation Limited</p>
+
+          <p class="g-cap-s">IOCL Guwahati Refinery &middot; Anomaly Detection &amp; Sensor Analytics</p>
+
+        </div>
+
+      </div>
+
+      <!-- Photo 7: Media Interview -->
+
+      <div class="gi reveal" data-gi="6" data-cap="Interview With Media &mdash; Demonstrating AgriHealth AI at Bihar AI Summit 2026">
+
+        <div class="gf">
+
+          <div class="gc-tr"></div><div class="gc-bl"></div>
+
+          <div class="g-vig"></div>
+
+          <div class="g-badge">&#127981; Media Interview &mdash; Live Showcase</div>
+
+          <img loading="lazy" class="g-img" src="photo7.jpeg" alt="Interview With Media at Bihar AI Summit 2026" id="gphoto6">
+
+        </div>
+
+        <div class="g-cap">
+
+          <p class="g-cap-t">Interview With Media &mdash; AgriHealth AI</p>
+
+          <p class="g-cap-s">Press &amp; Media Interview &middot; Bihar AI Summit 2026</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="journey" class="section">
+
+  <div class="wrap">
+
+    <div class="section-head reveal"><p class="eyebrow">09 &mdash; Timeline</p><h2 class="section-title">The path here.</h2></div>
+
+    <div class="milestones reveal">
+
+      <div class="ms"><span class="ms-date">2023</span><span class="ms-ev">Started B.Tech CSE &mdash; Gopal Narayan Singh University, Bihar</span></div>
+
+      <div class="ms"><span class="ms-date">JAN 2025</span><span class="ms-ev">Prompt Engineering Specialization &mdash; Vanderbilt / Coursera</span></div>
+
+      <div class="ms"><span class="ms-date">APR 2025</span><span class="ms-ev">Front End Technologies certification &mdash; IBM Career Education</span></div>
+
+      <div class="ms"><span class="ms-date">DEC 2025</span><span class="ms-ev">AI + Chatbot certifications &mdash; IBM / Coursera</span></div>
+
+      <div class="ms"><span class="ms-date">JAN 2026</span><span class="ms-ev">Software Engineer Intern &mdash; IOCL, Guwahati Refinery</span></div>
+
+      <div class="ms"><span class="ms-date">2026</span><span class="ms-ev">IBM Hackathon Winner &mdash; AgriHealth AI, presented at AI Summit Bihar</span></div>
+
+      <div class="ms"><span class="ms-date">JUL 2026</span><span class="ms-ev">Cybersecurity Intern &mdash; NRSC, ISRO</span></div>
+
+      <div class="ms"><span class="ms-date">2027</span><span class="ms-ev">B.Tech graduation (expected)</span></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ============ THOUGHTS / PHILOSOPHY ============ -->
+
+<section id="thoughts" class="section">
+
+  <div class="wrap">
+
+    <div class="section-head reveal"><p class="eyebrow">10 &mdash; Philosophy</p><h2 class="section-title">Thoughts.</h2></div>
+
+    <div class="quote-card reveal" id="qod-card">
+
+      <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+
+      <!-- Header: label + date -->
+
+      <div class="qod-header">
+
+        <span class="qod-label">Quote of the Day</span>
+
+        <div class="qod-date">
+
+          <span class="qod-day" id="qod-dayname"></span>
+
+          <span id="qod-datestr"></span>
+
+        </div>
+
+      </div>
+
+      <!-- Quote body -->
+
+      <blockquote class="quote-text" id="qod-text"></blockquote>
+
+      <!-- Divider -->
+
+      <div class="qod-divider" aria-hidden="true"></div>
+
+      <!-- Author + category badge -->
+
+      <div class="quote-author">
+
+        <span class="quote-line"></span>
+
+        <cite class="quote-name" id="qod-author"></cite>
+
+        <span class="qod-badge" id="qod-badge"></span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="contact" class="section">
+
+  <div class="wrap">
+
+    <p class="eyebrow reveal">11 &mdash; Contact</p>
+
+    <h2 class="contact-title reveal">Let&#39;s talk.</h2>
+
+    <div class="contact-links reveal">
+
+      <div class="c-row">
+
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=tej.pratap.career@gmail.com" target="_blank" rel="noopener">tej.pratap.career@gmail.com</a>
+
+        <button class="copy-btn" data-copy="tej.pratap.career@gmail.com">Copy</button>
+
+      </div>
+
+      <a href="https://linkedin.com/in/tej-pratap-203418395" target="_blank" rel="noopener">LinkedIn &#8599;</a>
+
+      <a href="https://github.com/rahulpatel0407" target="_blank" rel="noopener">GitHub &#8599;</a>
+
+      <a href="https://drive.google.com/file/d/1tHUlCB0S0N0gr-N9hsn6qJWRu0L5-Htx/view?usp=sharing" target="_blank" rel="noopener">R&eacute;sum&eacute; (PDF) &#8599;</a>
+
+    </div>
+
+    <p class="contact-meta reveal">Hyderabad, Telangana &middot; Open to research internships in IoT, ML, or Computer Vision</p>
+
+  </div>
+
+</section>
+
+</main>
+
+<footer>
+
+  <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;width:100%;">
+
+    <span>Tej Pratap &copy; 2026</span>
+
+    <a href="#hero">Back to top &#8593;</a>
+
+  </div>
+
+</footer>
+
+<button id="termTrig" class="term-trig" aria-label="Open terminal">&gt;_</button>
+
+<div id="termOv" class="term-ov">
+
+  <div class="term-win">
+
+    <div class="term-bar">
+
+      <span class="term-dots"><span></span><span></span><span></span></span>
+
+      <span class="term-title">visitor@tejpratap:~</span>
+
+      <button id="termX" class="term-x">&#10005;</button>
+
+    </div>
+
+    <div class="term-body" id="termBody"><p class="tl">Type <span class="tc">help</span> to get started.</p></div>
+
+    <div class="term-in-row">
+
+      <span class="term-pr">$</span>
+
+      <input id="termIn" class="term-in" type="text" autocomplete="off" spellcheck="false" aria-label="Terminal input">
+
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+
+document.addEventListener('DOMContentLoaded',()=>{
+
+  const rm=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+  if(window.gsap&&window.ScrollTrigger)gsap.registerPlugin(ScrollTrigger);
+
+  // Hero trace
+
+  const tp=document.getElementById('tracePath');
+
+  if(tp){const l=tp.getTotalLength();tp.style.strokeDasharray=l;tp.style.strokeDashoffset=rm?0:l;if(!rm&&window.gsap)gsap.to(tp,{strokeDashoffset:0,duration:2.4,ease:'power2.out',delay:.3});}
+
+  // Hero reveal
+
+  if(!rm&&window.gsap)gsap.from('.hero-content > *',{y:22,opacity:0,duration:.9,stagger:.12,ease:'power3.out',delay:.25});
+
+  else document.querySelectorAll('.hero-content > *').forEach(e=>e.style.opacity=1);
+
+  // Scroll reveals
+
+  document.querySelectorAll('.reveal').forEach(el=>{
+
+    if(rm||!window.gsap){el.style.opacity=1;return;}
+
+    gsap.fromTo(el,{y:28,opacity:0},{y:0,opacity:1,duration:.8,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 88%'}});
+
+  });
+
+  // Cert card stagger
+
+  if(!rm&&window.gsap)
+
+    document.querySelectorAll('.cert-card').forEach((c,i)=>
+
+      gsap.fromTo(c,{y:45,opacity:0,rotateX:12},{y:0,opacity:1,rotateX:0,duration:.7,ease:'power3.out',delay:i*.09,scrollTrigger:{trigger:c,start:'top 91%'}}));
+
+  // Gallery stagger
+
+  if(!rm&&window.gsap)
+
+    document.querySelectorAll('.gi').forEach((g,i)=>
+
+      gsap.fromTo(g,{y:55,opacity:0,scale:.94},{y:0,opacity:1,scale:1,duration:.75,ease:'power3.out',delay:i*.1,scrollTrigger:{trigger:g,start:'top 90%'}}));
+
+  // Nav
+
+  const fill=document.getElementById('navFill'),nav=document.getElementById('nav');
+
+  function onScroll(){const t=window.scrollY,h=document.documentElement.scrollHeight-window.innerHeight;if(fill)fill.style.width=(h>0?(t/h)*100:0)+'%';if(nav)nav.classList.toggle('scrolled',t>40);}
+
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  // Active nav link
+
+  const secs=document.querySelectorAll('main section[id]'),lks=document.querySelectorAll('.nav-link,.mob-menu a');
+
+  if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){const id=e.target.id;lks.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+id));}});},{rootMargin:'-45% 0px -45% 0px'});secs.forEach(s=>io.observe(s));}
+
+  // Mobile menu
+
+  const tog=document.getElementById('navTog'),mnu=document.getElementById('mobMenu');
+
+  if(tog&&mnu){tog.addEventListener('click',()=>{const o=mnu.classList.toggle('open');tog.classList.toggle('open',o);tog.setAttribute('aria-expanded',o);});mnu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mnu.classList.remove('open');tog.classList.remove('open');tog.setAttribute('aria-expanded','false');}));}
+
+  // Case toggles
+
+  document.querySelectorAll('.case-btn').forEach(b=>{
+
+    b.addEventListener('click',()=>{const t=document.getElementById(b.getAttribute('data-target'));if(!t)return;const o=t.classList.toggle('open');b.classList.toggle('open',o);b.querySelector('.bt').textContent=o?'Hide case study':'View case study';});
+
+  });
+
+  // Cert filter
+
+  const fbs=document.querySelectorAll('.cert-fb'),ccs=document.querySelectorAll('.cert-card');
+
+  fbs.forEach(b=>b.addEventListener('click',()=>{
+
+    const f=b.getAttribute('data-filter');
+
+    fbs.forEach(x=>x.classList.remove('active'));b.classList.add('active');
+
+    ccs.forEach(c=>{
+
+      const show=f==='all'||c.getAttribute('data-cat')===f;
+
+      if(!rm&&window.gsap){if(show){c.classList.remove('hidden');gsap.fromTo(c,{opacity:0,y:15},{opacity:1,y:0,duration:.4,ease:'power2.out'});}
+
+      else gsap.to(c,{opacity:0,y:-10,duration:.25,ease:'power2.in',onComplete:()=>c.classList.add('hidden')});}
+
+      else c.classList.toggle('hidden',!show);
+
+    });
+
+  }));
+
+  // Gallery lightbox
+
+  const modal=document.getElementById('gal-modal'),mImg=document.getElementById('gmImg'),mCap=document.getElementById('gmCap');
+
+  const mClose=document.getElementById('gmClose'),mPrev=document.getElementById('gmPrev'),mNext=document.getElementById('gmNext');
+
+  const gis=[...document.querySelectorAll('.gi[data-gi]')];let cur=0;
+
+  function openGal(i){const item=gis[i];if(!item||!modal)return;const img=item.querySelector('.g-img');mImg.src=img?img.src:'';mImg.alt=img?img.alt:'';mCap.textContent=item.getAttribute('data-cap')||'';cur=i;modal.classList.add('open');document.body.style.overflow='hidden';}
+
+  function closeGal(){if(modal){modal.classList.remove('open');document.body.style.overflow='';}}
+
+  gis.forEach((g,i)=>g.addEventListener('click',()=>openGal(i)));
+
+  if(mClose)mClose.addEventListener('click',closeGal);
+
+  if(mPrev)mPrev.addEventListener('click',()=>openGal((cur-1+gis.length)%gis.length));
+
+  if(mNext)mNext.addEventListener('click',()=>openGal((cur+1)%gis.length));
+
+  if(modal)modal.addEventListener('click',e=>{if(e.target===modal)closeGal();});
+
+  // Keyboard
+
+  document.addEventListener('keydown',e=>{
+
+    if(modal&&modal.classList.contains('open')){if(e.key==='Escape')closeGal();if(e.key==='ArrowLeft')mPrev&&mPrev.click();if(e.key==='ArrowRight')mNext&&mNext.click();}
+
+    const typing=document.activeElement&&document.activeElement.tagName==='INPUT';
+
+    if(!typing&&e.key.toLowerCase()==='t'){const to=document.getElementById('termOv');if(to&&!to.classList.contains('open'))openTerm();}
+
+  });
+
+  // Loader
+
+  const ldr=document.getElementById('loader'),lp=document.getElementById('lPct');
+
+  if(ldr){if(rm){ldr.style.display='none';}else{let s=null;function tick(ts){if(!s)s=ts;const p=Math.min(1,(ts-s)/1000);if(lp)lp.textContent=String(Math.floor(p*100)).padStart(3,'0');if(p<1)requestAnimationFrame(tick);else{setTimeout(()=>ldr.classList.add('hide'),150);setTimeout(()=>ldr.style.display='none',750);}}requestAnimationFrame(tick);}}
+
+  // Cursor
+
+  const cd=document.getElementById('cDot'),cr=document.getElementById('cRing');
+
+  if(window.matchMedia('(hover:hover) and (pointer:fine)').matches&&cd&&cr&&!rm){
+
+    document.body.classList.add('hc');let mx=0,my=0,rx=0,ry=0;
+
+    window.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cd.style.left=mx+'px';cd.style.top=my+'px';});
+
+    function rl(){rx+=(mx-rx)*.18;ry+=(my-ry)*.18;cr.style.left=rx+'px';cr.style.top=ry+'px';requestAnimationFrame(rl);}rl();
+
+    document.querySelectorAll('a,button,.chip,.proj-card,.cert-card,.gi').forEach(el=>{el.addEventListener('mouseenter',()=>cr.classList.add('hov'));el.addEventListener('mouseleave',()=>cr.classList.remove('hov'));});
+
+  }
+
+  // Terminal
+
+  const tT=document.getElementById('termTrig'),tO=document.getElementById('termOv'),tX=document.getElementById('termX'),tI=document.getElementById('termIn'),tB=document.getElementById('termBody');
+
+  const cmds={help:()=>'Commands: about, experience, skills, projects, certs, gallery, thoughts, contact, whoami, sudo, clear',about:()=>'AI/ML+Computer Vision+Cybersecurity. Building threat-detection at ISRO/NRSC.',whoami:()=>"You're a visitor. If you're a recruiter — scroll up.",experience:()=>'NRSC/ISRO Cybersecurity Intern Jul 2026-present. IOCL Software Engineer Intern Jan-Mar 2026.',skills:()=>'Python, TensorFlow, PyTorch, OpenCV, SQL, Anomaly Detection, ETL, Cybersecurity Fundamentals.',projects:()=>'AgriHealth AI (IBM Hackathon 2026 winner) & PPE Detection Kit (YOLOv8, 91%+ precision).',certs:()=>'10 credentials: Google Cybersecurity, IBM Ethical Hacking, Strategic Cybersecurity, AI Foundations, Trustworthy GenAI, Prompt Engineering x2, IOCL Internship + 2 more.',gallery:()=>'7 photos from Bihar AI Summit 2026 & IOCL Internship. Scroll to Gallery section.',thoughts:()=>'"Arise, awake, and stop not till the goal is reached." — Swami Vivekananda',quote:()=>'"Arise, awake, and stop not till the goal is reached." — Swami Vivekananda',contact:()=>'tej.pratap.career@gmail.com | linkedin.com/in/tej-pratap-203418395',sudo:()=>'Nice try. Access requires an actual interview.'};
+
+  function openTerm(){if(!tO)return;tO.classList.add('open');setTimeout(()=>tI&&tI.focus(),50);}
+
+  function closeTerm(){if(tO)tO.classList.remove('open');}
+
+  function runCmd(raw){if(!tB)return;const cmd=raw.trim().toLowerCase();const echo=document.createElement('p');echo.className='tl te';echo.textContent='$ '+raw;tB.appendChild(echo);if(cmd==='clear'){tB.innerHTML='';return;}const out=document.createElement('p');out.className='tl';out.textContent=cmds[cmd]?cmds[cmd]():('command not found: '+cmd+' — type help');tB.appendChild(out);tB.scrollTop=tB.scrollHeight;}
+
+  if(tT)tT.addEventListener('click',openTerm);
+
+  if(tX)tX.addEventListener('click',closeTerm);
+
+  if(tO)tO.addEventListener('click',e=>{if(e.target===tO)closeTerm();});
+
+  if(tI)tI.addEventListener('keydown',e=>{if(e.key==='Enter'&&tI.value.trim()){runCmd(tI.value);tI.value='';}});
+
+  // Copy
+
+  const cb=document.querySelector('.copy-btn'),toast=document.getElementById('toast');
+
+  if(cb)cb.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(cb.getAttribute('data-copy'));if(toast){toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),1800);}}catch(e){}});
+
+  //  Quote of the Day — display only, auto-updates daily
+
+  (function(){
+
+    const Q=[
+
+      {t:"Arise, awake, and stop not till the goal is reached.",a:"Swami Vivekananda",c:"Motivation"},
+
+      {t:"All the power is within you; you can do anything and everything.",a:"Swami Vivekananda",c:"Motivation"},
+
+      {t:"Take up one idea. Make that one idea your life.",a:"Swami Vivekananda",c:"Discipline"},
+
+      {t:"The greatest sin is to think yourself weak.",a:"Swami Vivekananda",c:"Mindset"},
+
+      {t:"In a conflict between the heart and the brain, follow your heart.",a:"Swami Vivekananda",c:"Wisdom"},
+
+      {t:"You have to grow from the inside out. None can teach you, none can make you spiritual.",a:"Swami Vivekananda",c:"Spirituality"},
+
+      {t:"Be not afraid of anything. You will do marvellous work. The moment you fear, you are nobody.",a:"Swami Vivekananda",c:"Motivation"},
+
+      {t:"The world is the great gymnasium where we come to make ourselves strong.",a:"Swami Vivekananda",c:"Discipline"},
+
+      {t:"Strength is life, weakness is death. Expansion is life, contraction is death.",a:"Swami Vivekananda",c:"Motivation"},
+
+      {t:"Anything that makes you weak physically, intellectually and spiritually, reject as poison.",a:"Swami Vivekananda",c:"Wisdom"},
+
+      {t:"We are what our thoughts have made us; so take care about what you think.",a:"Swami Vivekananda",c:"Mindset"},
+
+      {t:"Dream, dream, dream. Dreams transform into thoughts and thoughts result in action.",a:"APJ Abdul Kalam",c:"Motivation"},
+
+      {t:"You have to dream before your dreams can come true.",a:"APJ Abdul Kalam",c:"Motivation"},
+
+      {t:"Excellence is a continuous process and not an accident.",a:"APJ Abdul Kalam",c:"Success"},
+
+      {t:"All of us do not have equal talent. But all of us have an equal opportunity to develop our talents.",a:"APJ Abdul Kalam",c:"Mindset"},
+
+      {t:"If you fail, never give up — F.A.I.L. means First Attempt In Learning.",a:"APJ Abdul Kalam",c:"Motivation"},
+
+      {t:"Man needs his difficulties because they are necessary to enjoy success.",a:"APJ Abdul Kalam",c:"Success"},
+
+      {t:"Without your involvement you can't succeed. With your involvement you can't fail.",a:"APJ Abdul Kalam",c:"Motivation"},
+
+      {t:"Innovation is the key to a sustainable future, not just for nations, but for each individual.",a:"APJ Abdul Kalam",c:"Innovation"},
+
+      {t:"You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions.",a:"Bhagavad Gita",c:"Spirituality"},
+
+      {t:"Change is the law of the universe. You can be a millionaire, or a pauper in an instant.",a:"Bhagavad Gita",c:"Wisdom"},
+
+      {t:"A man is made by his belief. As he believes, so he is.",a:"Bhagavad Gita",c:"Mindset"},
+
+      {t:"Set thy heart upon thy work, but never on its reward.",a:"Bhagavad Gita",c:"Discipline"},
+
+      {t:"Fear not what is not real. What is real always was and cannot be destroyed.",a:"Bhagavad Gita",c:"Wisdom"},
+
+      {t:"The mind acts like an enemy for those who do not control it.",a:"Bhagavad Gita",c:"Mindset"},
+
+      {t:"Be the change you wish to see in the world.",a:"Mahatma Gandhi",c:"Wisdom"},
+
+      {t:"Strength does not come from physical capacity. It comes from an indomitable will.",a:"Mahatma Gandhi",c:"Motivation"},
+
+      {t:"In a gentle way, you can shake the world.",a:"Mahatma Gandhi",c:"Leadership"},
+
+      {t:"The future depends on what you do today.",a:"Mahatma Gandhi",c:"Discipline"},
+
+      {t:"Live as if you were to die tomorrow. Learn as if you were to live forever.",a:"Mahatma Gandhi",c:"Motivation"},
+
+      {t:"First they ignore you, then they laugh at you, then they fight you, then you win.",a:"Mahatma Gandhi",c:"Motivation"},
+
+      {t:"A man is but a product of his thoughts. What he thinks, he becomes.",a:"Mahatma Gandhi",c:"Mindset"},
+
+      {t:"You can't cross the sea merely by standing and staring at the water.",a:"Rabindranath Tagore",c:"Motivation"},
+
+      {t:"If you cry because the sun has gone out of your life, your tears will prevent you from seeing the stars.",a:"Rabindranath Tagore",c:"Wisdom"},
+
+      {t:"Faith is the bird that feels the light when the dawn is still dark.",a:"Rabindranath Tagore",c:"Spirituality"},
+
+      {t:"If no one responds to your call, then go your own way alone.",a:"Rabindranath Tagore",c:"Motivation"},
+
+      {t:"It always seems impossible until it's done.",a:"Nelson Mandela",c:"Motivation"},
+
+      {t:"Education is the most powerful weapon which you can use to change the world.",a:"Nelson Mandela",c:"Leadership"},
+
+      {t:"I never lose. I either win or learn.",a:"Nelson Mandela",c:"Mindset"},
+
+      {t:"Courage is not the absence of fear, but the triumph over it.",a:"Nelson Mandela",c:"Motivation"},
+
+      {t:"There is no passion to be found playing small — in settling for a life less than the one you are capable of living.",a:"Nelson Mandela",c:"Motivation"},
+
+      {t:"Success is not final, failure is not fatal: It is the courage to continue that counts.",a:"Winston Churchill",c:"Motivation"},
+
+      {t:"If you're going through hell, keep going.",a:"Winston Churchill",c:"Discipline"},
+
+      {t:"The pessimist sees difficulty in every opportunity. The optimist sees the opportunity in every difficulty.",a:"Winston Churchill",c:"Mindset"},
+
+      {t:"We make a living by what we get, but we make a life by what we give.",a:"Winston Churchill",c:"Wisdom"},
+
+      {t:"Never, never, never give up.",a:"Winston Churchill",c:"Discipline"},
+
+      {t:"Believe you can and you're halfway there.",a:"Theodore Roosevelt",c:"Motivation"},
+
+      {t:"Do what you can, with what you have, where you are.",a:"Theodore Roosevelt",c:"Motivation"},
+
+      {t:"With self-discipline most anything is possible.",a:"Theodore Roosevelt",c:"Discipline"},
+
+      {t:"It is hard to fail, but it is worse never to have tried to succeed.",a:"Theodore Roosevelt",c:"Motivation"},
+
+      {t:"Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work.",a:"Steve Jobs",c:"Success"},
+
+      {t:"Innovation distinguishes between a leader and a follower.",a:"Steve Jobs",c:"Innovation"},
+
+      {t:"Stay hungry. Stay foolish.",a:"Steve Jobs",c:"Motivation"},
+
+      {t:"The people who are crazy enough to think they can change the world are the ones who do.",a:"Steve Jobs",c:"Innovation"},
+
+      {t:"Have the courage to follow your heart and intuition. They somehow know what you truly want to become.",a:"Steve Jobs",c:"Mindset"},
+
+      {t:"Simple can be harder than complex. But once you get there, you can move mountains.",a:"Steve Jobs",c:"Innovation"},
+
+      {t:"When something is important enough, you do it even if the odds are not in your favor.",a:"Elon Musk",c:"Motivation"},
+
+      {t:"Failure is an option here. If things are not failing, you are not innovating enough.",a:"Elon Musk",c:"Innovation"},
+
+      {t:"Persistence is very important. You should not give up unless you are forced to give up.",a:"Elon Musk",c:"Discipline"},
+
+      {t:"The first step is to establish that something is possible; then probability will occur.",a:"Elon Musk",c:"Innovation"},
+
+      {t:"Boiling down the problem to its fundamental truths and then reasoning up from there.",a:"Elon Musk",c:"Innovation"},
+
+      {t:"Innovation happens when you give people a problem to solve, not a process to follow.",a:"Sundar Pichai",c:"Innovation"},
+
+      {t:"Wear your failure as a badge of honor.",a:"Sundar Pichai",c:"Mindset"},
+
+      {t:"The learn-it-all does better than the know-it-all.",a:"Satya Nadella",c:"Mindset"},
+
+      {t:"Empathy makes you a better innovator.",a:"Satya Nadella",c:"Innovation"},
+
+      {t:"Culture eats strategy for breakfast.",a:"Satya Nadella",c:"Leadership"},
+
+      {t:"Imagination is more important than knowledge. Knowledge is limited. Imagination encircles the world.",a:"Albert Einstein",c:"Innovation"},
+
+      {t:"Life is like riding a bicycle. To keep your balance you must keep moving.",a:"Albert Einstein",c:"Motivation"},
+
+      {t:"In the middle of every difficulty lies opportunity.",a:"Albert Einstein",c:"Mindset"},
+
+      {t:"Try not to become a man of success. Rather become a man of value.",a:"Albert Einstein",c:"Success"},
+
+      {t:"Logic will get you from A to Z; imagination will get you everywhere.",a:"Albert Einstein",c:"Innovation"},
+
+      {t:"Once we accept our limits, we go beyond them.",a:"Albert Einstein",c:"Motivation"},
+
+      {t:"If you want to find the secrets of the universe, think in terms of energy, frequency and vibration.",a:"Nikola Tesla",c:"Innovation"},
+
+      {t:"Be alone — that is the secret of invention; be alone, that is when ideas are born.",a:"Nikola Tesla",c:"Innovation"},
+
+      {t:"Genius is one percent inspiration and ninety-nine percent perspiration.",a:"Thomas Edison",c:"Discipline"},
+
+      {t:"I have not failed. I've just found 10,000 ways that won't work.",a:"Thomas Edison",c:"Motivation"},
+
+      {t:"Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time.",a:"Thomas Edison",c:"Motivation"},
+
+      {t:"There is no substitute for hard work.",a:"Thomas Edison",c:"Discipline"},
+
+      {t:"As you think, so shall you become.",a:"Bruce Lee",c:"Mindset"},
+
+      {t:"Do not pray for an easy life, pray for the strength to endure a difficult one.",a:"Bruce Lee",c:"Discipline"},
+
+      {t:"Knowing is not enough, we must apply. Willing is not enough, we must do.",a:"Bruce Lee",c:"Discipline"},
+
+      {t:"Absorb what is useful, discard what is useless and add what is specifically your own.",a:"Bruce Lee",c:"Mindset"},
+
+      {t:"Be like water making its way through cracks. Be water, my friend.",a:"Bruce Lee",c:"Wisdom"},
+
+      {t:"Long-term consistency trumps short-term intensity.",a:"Bruce Lee",c:"Discipline"},
+
+      {t:"Don't count the days; make the days count.",a:"Muhammad Ali",c:"Motivation"},
+
+      {t:"Impossible is just a big word thrown around by small men who find it easier to live in the world they've been given.",a:"Muhammad Ali",c:"Motivation"},
+
+      {t:"He who is not courageous enough to take risks will accomplish nothing in life.",a:"Muhammad Ali",c:"Motivation"},
+
+      {t:"If my mind can conceive it, and my heart can believe it — then I can achieve it.",a:"Muhammad Ali",c:"Mindset"},
+
+      {t:"Champions aren't made in gyms. Champions are made from something they have deep inside them.",a:"Muhammad Ali",c:"Discipline"},
+
+      {t:"Small daily improvements over time lead to stunning results.",a:"Robin Sharma",c:"Discipline"},
+
+      {t:"Leadership is not about a title or a designation. It's about impact, influence and inspiration.",a:"Robin Sharma",c:"Leadership"},
+
+      {t:"All change is hard at first, messy in the middle and gorgeous at the end.",a:"Robin Sharma",c:"Motivation"},
+
+      {t:"Every master was once a disaster.",a:"Robin Sharma",c:"Motivation"},
+
+      {t:"Your excuses are just the lies your fears have sold you.",a:"Robin Sharma",c:"Mindset"},
+
+      {t:"Every action you take is a vote for the type of person you wish to become.",a:"James Clear",c:"Discipline"},
+
+      {t:"You do not rise to the level of your goals. You fall to the level of your systems.",a:"James Clear",c:"Discipline"},
+
+      {t:"Success is the product of daily habits — not once-in-a-lifetime transformations.",a:"James Clear",c:"Success"},
+
+      {t:"Be the designer of your world and not merely the consumer of it.",a:"James Clear",c:"Mindset"},
+
+      {t:"Professionals stick to the schedule; amateurs let life get in the way.",a:"James Clear",c:"Discipline"},
+
+      {t:"Start with why.",a:"Simon Sinek",c:"Leadership"},
+
+      {t:"Great leaders don't take power, they give it away.",a:"Simon Sinek",c:"Leadership"},
+
+      {t:"Working hard for something we love is called passion.",a:"Simon Sinek",c:"Success"},
+
+      {t:"Leadership is not about being in charge. It's about taking care of those in your charge.",a:"Simon Sinek",c:"Leadership"},
+
+      {t:"Seek wealth, not money or status. Wealth is having assets that earn while you sleep.",a:"Naval Ravikant",c:"Success"},
+
+      {t:"Read what you love until you love to read.",a:"Naval Ravikant",c:"Wisdom"},
+
+      {t:"A calm mind, a fit body, and a house full of love. These things cannot be bought. They must be earned.",a:"Naval Ravikant",c:"Mindset"},
+
+      {t:"You make your own luck if you stay at it long enough.",a:"Naval Ravikant",c:"Success"},
+
+      {t:"The less you want, the richer you are.",a:"Naval Ravikant",c:"Wisdom"},
+
+      {t:"You have power over your mind — not outside events. Realize this, and you will find strength.",a:"Marcus Aurelius",c:"Wisdom"},
+
+      {t:"The impediment to action advances action. What stands in the way becomes the way.",a:"Marcus Aurelius",c:"Discipline"},
+
+      {t:"Very little is needed to make a happy life; it is all within yourself, in your way of thinking.",a:"Marcus Aurelius",c:"Mindset"},
+
+      {t:"Waste no more time arguing about what a good man should be. Be one.",a:"Marcus Aurelius",c:"Discipline"},
+
+      {t:"The happiness of your life depends upon the quality of your thoughts.",a:"Marcus Aurelius",c:"Mindset"},
+
+      {t:"Be tolerant with others and strict with yourself.",a:"Marcus Aurelius",c:"Discipline"},
+
+      {t:"Luck is what happens when preparation meets opportunity.",a:"Seneca",c:"Success"},
+
+      {t:"We suffer more in imagination than in reality.",a:"Seneca",c:"Mindset"},
+
+      {t:"Difficulties strengthen the mind, as labor does the body.",a:"Seneca",c:"Discipline"},
+
+      {t:"Begin at once to live, and count each separate day as a separate life.",a:"Seneca",c:"Motivation"},
+
+      {t:"While we are postponing, life speeds by.",a:"Seneca",c:"Motivation"},
+
+      {t:"It does not matter how slowly you go as long as you do not stop.",a:"Confucius",c:"Discipline"},
+
+      {t:"The man who moves a mountain begins by carrying away small stones.",a:"Confucius",c:"Discipline"},
+
+      {t:"Choose a job you love, and you will never have to work a day in your life.",a:"Confucius",c:"Success"},
+
+      {t:"To know what you know and what you do not know, that is true knowledge.",a:"Confucius",c:"Wisdom"},
+
+      {t:"Respect yourself and others will respect you.",a:"Confucius",c:"Wisdom"},
+
+      {t:"A journey of a thousand miles begins with a single step.",a:"Lao Tzu",c:"Motivation"},
+
+      {t:"Knowing others is intelligence; knowing yourself is true wisdom.",a:"Lao Tzu",c:"Wisdom"},
+
+      {t:"Nature does not hurry, yet everything is accomplished.",a:"Lao Tzu",c:"Wisdom"},
+
+      {t:"To the mind that is still, the whole universe surrenders.",a:"Lao Tzu",c:"Spirituality"},
+
+      {t:"Watch your thoughts, they become your words; watch your words, they become your actions.",a:"Lao Tzu",c:"Mindset"},
+
+      {t:"The best way to predict the future is to create it.",a:"Peter Drucker",c:"Innovation"},
+
+      {t:"Efficiency is doing things right; effectiveness is doing the right things.",a:"Peter Drucker",c:"Leadership"},
+
+      {t:"What gets measured gets managed.",a:"Peter Drucker",c:"Success"},
+
+      {t:"You are the average of the five people you spend the most time with.",a:"Jim Rohn",c:"Mindset"},
+
+      {t:"Formal education will make you a living; self-education will make you a fortune.",a:"Jim Rohn",c:"Success"},
+
+      {t:"Don't wish it were easier; wish you were better.",a:"Jim Rohn",c:"Discipline"},
+
+      {t:"If you don't design your own life plan, chances are you'll fall into someone else's plan.",a:"Jim Rohn",c:"Motivation"},
+
+      {t:"Your attitude, not your aptitude, will determine your altitude.",a:"Zig Ziglar",c:"Mindset"},
+
+      {t:"You don't have to be great to start, but you have to start to be great.",a:"Zig Ziglar",c:"Motivation"},
+
+      {t:"You were born to win, but to be a winner, you must plan to win, prepare to win, and expect to win.",a:"Zig Ziglar",c:"Success"},
+
+      {t:"Where focus goes, energy flows.",a:"Tony Robbins",c:"Mindset"},
+
+      {t:"Identify your problems, but give your power and energy to solutions.",a:"Tony Robbins",c:"Mindset"},
+
+      {t:"It is in your moments of decision that your destiny is shaped.",a:"Tony Robbins",c:"Leadership"},
+
+      {t:"Learn everything that is good from others, but bring it in, and in your own way absorb it.",a:"Swami Vivekananda",c:"Wisdom"},
+
+      {t:"My message, especially to young people, is to have courage to think differently.",a:"APJ Abdul Kalam",c:"Innovation"},
+
+      {t:"Thinking is the capital, Enterprise is the way, Hard work is the solution.",a:"APJ Abdul Kalam",c:"Success"},
+
+      {t:"The soul is never born nor dies at any time.",a:"Bhagavad Gita",c:"Spirituality"},
+
+      {t:"When meditation is mastered, the mind is unwavering like the flame of a lamp in a windless place.",a:"Bhagavad Gita",c:"Discipline"},
+
+      {t:"The weak can never forgive. Forgiveness is the attribute of the strong.",a:"Mahatma Gandhi",c:"Wisdom"},
+
+      {t:"Satisfaction lies in the effort, not in the attainment. Full effort is full victory.",a:"Mahatma Gandhi",c:"Discipline"},
+
+      {t:"The fears we don't face become our limits.",a:"Robin Sharma",c:"Mindset"},
+
+      {t:"Changes that seem small and unimportant at first will compound into remarkable results.",a:"James Clear",c:"Discipline"},
+
+      {t:"The successful warrior is the average man, with laser-like focus.",a:"Bruce Lee",c:"Discipline"},
+
+      {t:"The true sign of intelligence is not knowledge but imagination.",a:"Albert Einstein",c:"Innovation"},
+
+      {t:"Do first things first, and second things not at all.",a:"Peter Drucker",c:"Discipline"},
+
+      {t:"Either you run the day or the day runs you.",a:"Jim Rohn",c:"Discipline"},
+
+      {t:"You were designed for accomplishment, engineered for success, and endowed with the seeds of greatness.",a:"Zig Ziglar",c:"Success"},
+
+      {t:"The only impossible journey is the one you never begin.",a:"Tony Robbins",c:"Motivation"},
+
+      {t:"Play long-term games with long-term people.",a:"Naval Ravikant",c:"Wisdom"}
+
+    ];
+
+    // Pick today's quote by day-of-year
+
+    const now=new Date();
+
+    const start=new Date(now.getFullYear(),0,0);
+
+    const dayIdx=Math.floor((now-start)/86400000)-1;
+
+    const q=Q[((dayIdx%Q.length)+Q.length)%Q.length];
+
+    // Render date
+
+    const elDay=document.getElementById('qod-dayname');
+
+    const elDate=document.getElementById('qod-datestr');
+
+    if(elDay) elDay.textContent=now.toLocaleDateString('en-US',{weekday:'long'});
+
+    if(elDate) elDate.textContent=now.toLocaleDateString('en-US',{day:'numeric',month:'long',year:'numeric'});
+
+    // Render quote
+
+    const elText=document.getElementById('qod-text');
+
+    const elAuthor=document.getElementById('qod-author');
+
+    const elBadge=document.getElementById('qod-badge');
+
+    if(elText) elText.textContent=q.t;
+
+    if(elAuthor) elAuthor.textContent='\u2014 '+q.a;
+
+    if(elBadge){elBadge.textContent=q.c;elBadge.className='qod-badge '+q.c;}
+
+  })();
+
+});
+
+</script>
+
+</body>
+
+</html>

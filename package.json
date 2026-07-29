@@ -1,0 +1,12 @@
+{
+  "name": "tech-with-tej",
+  "version": "1.0.0",
+  "description": "Tej Pratap Portfolio - AI/ML, Computer Vision & Cybersecurity",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve -s ."
+  },
+  "dependencies": {
+    "serve": "^14.2.3"
+  }
+}

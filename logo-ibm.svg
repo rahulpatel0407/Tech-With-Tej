@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 128" width="320" height="128">
+  <g fill="#054ADA">
+    <!-- I (8 bars) -->
+    <rect x="10" y="8" width="60" height="10"/>
+    <rect x="10" y="23" width="60" height="10"/>
+    <rect x="30" y="38" width="20" height="10"/>
+    <rect x="30" y="53" width="20" height="10"/>
+    <rect x="30" y="68" width="20" height="10"/>
+    <rect x="30" y="83" width="20" height="10"/>
+    <rect x="10" y="98" width="60" height="10"/>
+    <rect x="10" y="113" width="60" height="10"/>
+
+    <!-- B (8 bars) -->
+    <path d="M85 8h50c12 0 20 3 20 8s-8 8-20 8H85V8zm0 15h50c12 0 20 3 20 8s-8 8-20 8H85V23zm0 15h40c9 0 15 2.5 15 6.5s-6 6.5-15 6.5H85V38zm0 15h40c9 0 15 2.5 15 6.5s-6 6.5-15 6.5H85V53zm0 15h40c9 0 15 2.5 15 6.5s-6 6.5-15 6.5H85V68zm0 15h40c9 0 15 2.5 15 6.5s-6 6.5-15 6.5H85V83zm0 15h50c12 0 20 3 20 8s-8 8-20 8H85V98zm0 15h50c12 0 20 3 20 8s-8 8-20 8H85v-8z"/>
+
+    <!-- M (8 bars) -->
+    <path d="M170 8h14l20 48L224 8h14v10h-8l-18 42h-16L178 18h-8V8zm0 15h10l20 48h8l20-48h10v10h-4l-18 42h-16L174 33h-4V23zm0 15h6l24 56h2l24-56h6v10h-1l-22 50h-16L171 48h-1V38zm0 15h2l28 64h2l28-64h2v10h-1l-24 54h-16L170 63v-10zm0 15h1l30 68h1l30-68h1v10h-1l-26 58h-14L170 78v-10zm0 15l32 72h1l32-72v10h-1l-28 62h-12L170 93v-10zm0 15h66v10h-66v-10zm0 15h66v10h-66v-10z"/>
+  </g>
+</svg>
