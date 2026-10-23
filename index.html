@@ -13,8 +13,10 @@
 <meta property="og:title" content="Tej Pratap — AI/ML · Computer Vision · Cybersecurity">
 <meta property="og:description" content="Explore Tej Pratap’s work in AI/ML, computer vision, Python automation, cybersecurity, anomaly detection, and AgriHealth AI.">
 <meta property="og:url" content="https://tech-with-tej.onrender.com/">
-<!-- A personal portrait will be added here once the owner supplies the preferred headshot. Do not use an event photo as the profile image. -->
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://tech-with-tej.onrender.com/assets/images/tej-pratap-profile.jpg">
+<meta property="og:image:alt" content="Portrait of Tej Pratap">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://tech-with-tej.onrender.com/assets/images/tej-pratap-profile.jpg">
 <meta name="twitter:title" content="Tej Pratap — AI/ML · Computer Vision · Cybersecurity">
 <meta name="twitter:description" content="Tej Pratap’s portfolio: AI/ML, computer vision, Python automation, cybersecurity, and practical software projects.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230A0C0E'/%3E%3Cpath d='M8 55 L28 55 L36 32 L48 72 L58 44 L66 55 L92 55' stroke='%23E3A857' stroke-width='7' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
@@ -25,6 +27,7 @@
   "name": "Tej Pratap",
   "url": "https://tech-with-tej.onrender.com/",
   "description": "Computer Science student focused on AI/ML, computer vision, Python automation, cybersecurity, and anomaly detection.",
+  "image": "https://tech-with-tej.onrender.com/assets/images/tej-pratap-profile.jpg",
   "jobTitle": "Cybersecurity Intern",
   "worksFor": { "@type": "Organization", "name": "National Remote Sensing Centre (ISRO)" },
   "alumniOf": { "@type": "CollegeOrUniversity", "name": "Gopal Narayan Singh University" },
@@ -158,6 +161,12 @@
   .hero-trace{ position:absolute; inset:0; width:100%; height:62%; opacity:.42; pointer-events:none; }
   .hero-trace path{ fill:none; stroke:var(--signal); stroke-width:1.2; stroke-dasharray:1200; stroke-dashoffset:0; }
   .hero-content{ max-width:1120px; margin:0 auto; width:100%; position:relative; z-index:2; }
+  .profile-portrait{
+    width:132px; height:132px; border-radius:50%; object-fit:cover; object-position:center 24%;
+    border:2px solid var(--signal-dim); background:#fff; margin-bottom:1.5rem;
+    box-shadow:0 0 0 6px rgba(227,168,87,.05);
+  }
+  @media(min-width:768px){ .profile-portrait{ width:148px; height:148px; } }
   .hero-title{
     font-family:var(--font-display); font-weight:400; font-size:clamp(2.3rem,6.2vw,4.5rem);
     line-height:1.08; letter-spacing:-.015em; color:var(--ink); max-width:16.5ch; margin-bottom:1.6rem;
@@ -677,6 +686,7 @@
       <path id="tracePath" d="M0,100 L40,98 L80,103 L120,97 L160,101 L200,99 L240,104 L280,96 L320,100 L360,102 L400,98 L440,100 L480,97 L520,103 L560,99 L600,101 L640,100 L660,95 L680,60 L700,15 L715,70 L730,110 L745,90 L760,100 L800,99 L840,101 L880,98 L920,100 L960,102 L1000,99 L1040,101 L1080,98 L1120,100 L1160,99 L1200,100"/>
     </svg>
     <div class="hero-content">
+      <img class="profile-portrait" src="assets/images/tej-pratap-profile.jpg" alt="Portrait of Tej Pratap" width="288" height="288" fetchpriority="high" decoding="async">
       <p class="eyebrow">AI/ML · Computer Vision · Cybersecurity</p>
       <h1 class="hero-title">I build systems that catch what shouldn't be missed.</h1>
       <p class="hero-sub">From anomaly detection on live refinery sensor feeds to an edge crop-disease model presented at the Bihar AI Summit, I engineer systems across AI/ML, computer vision, and cybersecurity — currently contributing to threat-detection analytics at ISRO's National Remote Sensing Centre.</p>
