@@ -1,3 +1,31 @@
+# Public profile and research pages are intended to be discoverable.
+# Search and user-requested retrieval crawlers are explicitly allowed.
+# Unlisted crawlers still follow the general rule below.
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
 User-agent: *
 Allow: /
 
